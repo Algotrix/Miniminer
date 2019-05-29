@@ -3,6 +3,7 @@ move_dir = dir_none;
 switch(state)
 {
 	case "idle" :
+		// check inputs and assign next movement
 		if(input.key_up)
 		{
 			move_dir = dir_up;
@@ -10,6 +11,7 @@ switch(state)
 		else if(input.key_right)
 		{
 			move_dir = dir_right;
+			look_dir = dir_right;
 		}
 		else if(input.key_down)
 		{
@@ -18,7 +20,20 @@ switch(state)
 		else if(input.key_left)
 		{
 			move_dir = dir_left;
+			look_dir = dir_left;
 		}
+		
+		// set sprite for orientation
+		if(look_dir == dir_right)
+		{
+			image_index = 0;
+		}
+		else
+		{
+			image_index = 1;
+		}
+		
+		// look what's up in the next block!
 		move_tile(move_dir);
 		break;
 	case "move":
@@ -52,7 +67,16 @@ switch(state)
 		x = approach(x, x_target, o_stats.mine_spd);
 		y = approach(y, y_target, o_stats.mine_spd);
 		
-		image_index = 1;
+		// set sprite for orientation
+		if(look_dir == dir_right)
+		{
+			image_index = 2;
+		}
+		else
+		{
+			image_index = 3;
+		}
+		
 		if(x == x_target && y == y_target)
 		{
 			var block = get_block(x_pos_new, y_pos_new);
@@ -68,7 +92,6 @@ switch(state)
 	
 		if(x == pos(x_pos) && y == pos(y_pos))
 		{
-			image_index = 0;
 			state = "idle";
 		}
 		break;

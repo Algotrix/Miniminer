@@ -19,4 +19,8 @@ else if(hp_perc <= 20)
 	draw_sprite(s_crack1, 3, x, y);
 }
 
-if(hp_perc <= 0) instance_destroy(self);
+if(hp <= 0) 
+{
+	dbg("block_destroy")
+	killme();
+}

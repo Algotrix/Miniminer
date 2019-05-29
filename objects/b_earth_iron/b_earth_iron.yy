@@ -1,15 +1,15 @@
 {
-    "id": "f1a98a87-5cc2-4382-b029-ffd44fcbbf73",
+    "id": "e7a22bb0-954c-4350-87cf-36bb39541930",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "b_earth",
+    "name": "b_earth_iron",
     "eventList": [
         
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": [
         {
-            "id": "236e372f-0af1-4837-99d7-d4565d5c30e1",
+            "id": "a3cf2e0d-3be3-4227-bf73-fe20146ba795",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
@@ -17,7 +17,7 @@
             "value": "10"
         },
         {
-            "id": "26ff010d-4e60-4dba-9c8d-795f0ce92dbe",
+            "id": "650afc45-97f3-4eb2-98b9-7db94961290a",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
@@ -25,7 +25,7 @@
             "value": "0"
         },
         {
-            "id": "6c60daaa-5121-4e5f-8cfd-6808aeb96b57",
+            "id": "daaf4575-f15f-475b-b072-35b0ef27e148",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
@@ -49,6 +49,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "a9d39b03-10e5-4069-8ff7-d504b0523e98",
+    "spriteId": "67166f31-b11f-4a60-8c72-04b4c393111b",
     "visible": true
 }
