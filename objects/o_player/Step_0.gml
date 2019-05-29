@@ -27,8 +27,8 @@ switch(state)
 	case "moveblocked":
 		var x_target = pos(x_pos) + ((pos(x_pos_new) - pos(x_pos)) / 4);
 		var y_target = pos(y_pos) + ((pos(y_pos_new) - pos(y_pos)) / 4);
-		x = approach(x, x_target, move_spd);
-		y = approach(y, y_target, move_spd);
+		x = approach(x, x_target, o_stats.move_spd);
+		y = approach(y, y_target, o_stats.move_spd);
 	
 		if(x == x_target && y == y_target)
 		{
@@ -38,8 +38,8 @@ switch(state)
 		}
 		break;
 	case "moveblocked_back":
-		x = approach(x, pos(x_pos), move_spd);
-		y = approach(y, pos(y_pos), move_spd);
+		x = approach(x, pos(x_pos), o_stats.move_spd);
+		y = approach(y, pos(y_pos), o_stats.move_spd);
 	
 		if(x == pos(x_pos) && y == pos(y_pos))
 		{
@@ -49,22 +49,22 @@ switch(state)
 	case "mine":
 		var x_target = pos(x_pos) + ((pos(x_pos_new) - pos(x_pos)) / 4);
 		var y_target = pos(y_pos) + ((pos(y_pos_new) - pos(y_pos)) / 4);
-		x = approach(x, x_target, mine_spd);
-		y = approach(y, y_target, mine_spd);
+		x = approach(x, x_target, o_stats.mine_spd);
+		y = approach(y, y_target, o_stats.mine_spd);
 		
 		image_index = 1;
 		if(x == x_target && y == y_target)
 		{
 			var block = get_block(x_pos_new, y_pos_new);
-			block.hp -= mine_damage;
+			block.hp -= o_stats.mine_dmg;
 			x_pos_new = x_pos;
 			y_pos_new = y_pos;
 			state = "mine_moveback";
 		}
 		break;
 	case "mine_moveback":
-		x = approach(x, pos(x_pos), mine_spd);
-		y = approach(y, pos(y_pos), mine_spd);
+		x = approach(x, pos(x_pos), o_stats.mine_spd);
+		y = approach(y, pos(y_pos), o_stats.mine_spd);
 	
 		if(x == pos(x_pos) && y == pos(y_pos))
 		{

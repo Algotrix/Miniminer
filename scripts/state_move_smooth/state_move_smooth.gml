@@ -2,8 +2,8 @@
 ///@arg next_state
 var _next_state = argument0;
 
-x = approach(x, pos(x_pos_new), move_spd);
-y = approach(y, pos(y_pos_new), move_spd);
+x = approach(x, pos(x_pos_new), o_stats.move_spd);
+y = approach(y, pos(y_pos_new), o_stats.move_spd);
 	
 if(x == x_pos_new * 8 && y == y_pos_new * 8)
 {

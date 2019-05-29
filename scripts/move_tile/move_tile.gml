@@ -45,7 +45,7 @@ if(!block.is_solid)
 }
 else
 {
-	if(o_player.mine_level < block.mine_minlevel)
+	if(o_stats.mine_level < block.mine_minlevel)
 	{
 		state = "moveblocked";	
 	}
