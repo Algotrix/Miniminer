@@ -1,7 +1,7 @@
 config_keys();
 last_key = "";
 
-up = false;
-left = false;
-right = false;
-down = false;
+key_up = false;
+key_left = false;
+key_right = false;
+key_down = false;

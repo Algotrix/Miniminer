@@ -1,8 +1,8 @@
 {
-    "id": "720d9f2f-606d-4d1d-8d1e-153fd00ea6f7",
+    "id": "9a04529c-db93-4afe-bc59-a46bae49cbf6",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "get_pos",
+    "name": "approach",
     "IsCompatibility": false,
     "IsDnD": false
 }
