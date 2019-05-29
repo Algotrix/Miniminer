@@ -1,8 +1,8 @@
 {
-    "id": "9a9b6e78-db47-4e16-b4e5-e501c6f184f1",
+    "id": "41cbde52-85ba-4ef9-873c-bffdb61fd8af",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "create_random_block_amount",
+    "name": "create_random_collectibles",
     "IsCompatibility": false,
     "IsDnD": false
 }

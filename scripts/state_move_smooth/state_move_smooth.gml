@@ -5,7 +5,7 @@ var _next_state = argument0;
 x = approach(x, pos(x_pos_new), o_stats.move_spd);
 y = approach(y, pos(y_pos_new), o_stats.move_spd);
 	
-if(x == x_pos_new * 8 && y == y_pos_new * 8)
+if(x == pos(x_pos_new) && y == pos(y_pos_new))
 {
 	set_pos(x_pos_new, y_pos_new)
 	state = _next_state;

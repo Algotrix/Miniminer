@@ -6,4 +6,4 @@
 
 #macro layer_blocks "blocks"
 #macro layer_background "blocks_back"
-#macro layer_collectibles "collectibles";
+#macro layer_collectibles "collectibles"

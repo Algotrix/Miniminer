@@ -1,8 +1,8 @@
 {
-    "id": "d577c130-6863-4664-9b7c-600e182ea91a",
+    "id": "933c3d41-287d-452e-8fae-f34d328ee773",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "get_collectible",
+    "name": "create_collectible",
     "IsCompatibility": false,
     "IsDnD": false
 }
