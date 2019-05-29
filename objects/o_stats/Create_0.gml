@@ -1,5 +1,7 @@
 /// @description Hier Beschreibung einfügen
 
+godmode = true
+
 // Main Stats
 player_hp = 1;
 move_spd = 0.2;
@@ -8,3 +10,15 @@ mine_spd = 0.08;
 mine_level = 0;
 
 shinies = 0;
+
+
+#region godmode
+if(godmode)
+{
+	player_hp = 1;
+	move_spd = 4;
+	mine_dmg = 2;
+	mine_spd = 4;
+	mine_level = 0;	
+}
+#endregion
