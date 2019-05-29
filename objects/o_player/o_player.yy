@@ -55,6 +55,34 @@
             "value": "1",
             "varName": "move_spd",
             "varType": 0
+        },
+        {
+            "id": "16c9fd9c-6021-4c6c-876f-99d37b34cc87",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1",
+            "varName": "mine_damage",
+            "varType": 1
+        },
+        {
+            "id": "9d09244b-2aec-45ee-bc46-26beb8926f63",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "mine_level",
+            "varType": 1
         }
     ],
     "solid": false,

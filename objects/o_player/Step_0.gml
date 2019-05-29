@@ -54,4 +54,19 @@ switch(state)
 			state = "idle";
 		}
 		break;
+	case "mine":
+		var x_target = pos(x_pos) + ((pos(x_pos_new) - pos(x_pos)) / 4);
+		var y_target = pos(y_pos) + ((pos(y_pos_new) - pos(y_pos)) / 4);
+		x = approach(x, x_target, move_spd);
+		y = approach(y, y_target, move_spd);
+	
+		if(x == x_target && y == y_target)
+		{
+			var block = get_block(x_pos_new, y_pos_new);
+			block.hp -= mine_damage;
+			x_pos_new = x_pos;
+			y_pos_new = y_pos;
+			state = "moveblocked_back";
+		}
+		break;
 }
