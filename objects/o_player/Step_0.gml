@@ -99,6 +99,6 @@ switch(state)
 	{
 		state_move_smooth("idle");
 		var collectible = get_collectible(x_pos_new, y_pos_new);
-		// do something?
+		break;
 	}
 }

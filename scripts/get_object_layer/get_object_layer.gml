@@ -9,7 +9,7 @@ var _blocks = ds_list_create();
 
 instance_position_list(pos(_x_pos), pos(_y_pos), bb_block, _blocks, true);
 
-dbg("get_block " + string(_x_pos) + "," + string(_y_pos) + " - found: " + string(ds_list_size(_blocks)))
+dbg("get_block " + string(_x_pos) + "," + string(_y_pos) + " layer  " + string(_layer) + " - found: " + string(ds_list_size(_blocks)))
 
 for(var i = 0; i < ds_list_size(_blocks); i++)
 {
@@ -22,4 +22,5 @@ for(var i = 0; i < ds_list_size(_blocks); i++)
 }
 
 ds_list_destroy(_blocks);
-return b_empty;
+
+return noone;

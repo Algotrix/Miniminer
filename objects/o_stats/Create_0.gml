@@ -1,6 +1,6 @@
 /// @description Hier Beschreibung einfügen
 
-godmode = true
+godmode = false;
 
 // Main Stats
 player_hp = 1;
