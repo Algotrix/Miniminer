@@ -1,10 +1,19 @@
 {
-    "id": "70df77f6-e1d1-4f39-8435-713f464a21e1",
+    "id": "fe441cc2-b6db-40b5-82f9-f8c5c78a1537",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_crack",
+    "name": "cb_collectible",
     "eventList": [
-        
+        {
+            "id": "8a0f0828-f224-4560-9cc1-100deab36276",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "8c80227a-cdb0-43fd-97ad-f509ddb3b46d",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "fe441cc2-b6db-40b5-82f9-f8c5c78a1537"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -24,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "1282f059-1e65-4771-93af-456c811cf61e",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

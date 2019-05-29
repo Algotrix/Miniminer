@@ -52,7 +52,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "1",
+            "value": "5",
             "varName": "move_spd",
             "varType": 0
         },
@@ -66,7 +66,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "1",
+            "value": "5",
             "varName": "mine_damage",
             "varType": 1
         },
@@ -83,6 +83,20 @@
             "value": "0",
             "varName": "mine_level",
             "varType": 1
+        },
+        {
+            "id": "d64ef53c-60eb-4577-9b8a-a56c2bb2b1fd",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "3",
+            "varName": "mine_spd",
+            "varType": 0
         }
     ],
     "solid": false,

@@ -83,6 +83,20 @@
             "value": "0",
             "varName": "mine_minlevel",
             "varType": 1
+        },
+        {
+            "id": "96fd74cd-b524-42c4-b383-a7eeb95f76dc",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "rnd_image_max",
+            "varType": 1
         }
     ],
     "solid": false,
