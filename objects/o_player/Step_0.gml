@@ -7,7 +7,6 @@ switch(state)
 		if(input.up)
 		{
 			move_tile(0);
-			dbg("up")
 		}
 		else if(input.right)
 		{
@@ -20,9 +19,6 @@ switch(state)
 		else if(input.left)
 		{
 			move_tile(3);
-			dbg("left")
 		}
-	
 		break;
-
 }

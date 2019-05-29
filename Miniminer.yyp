@@ -58,7 +58,7 @@
             "Key": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
             "Value": {
                 "id": "04e928b2-bee0-472b-9d06-7fa4b29142aa",
-                "resourcePath": "objects\\op_block\\op_block.yy",
+                "resourcePath": "objects\\bb_block\\bb_block.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -84,6 +84,14 @@
                 "id": "130ae759-438c-4cfa-b843-1422b5d0a5e5",
                 "resourcePath": "views\\39e0f6b3-459b-4a5e-aa21-4aa12c096d01.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "3c9f41fe-13ba-41bf-be8d-de108185a281",
+            "Value": {
+                "id": "f0d074ef-a329-45db-a8bd-d5913f237765",
+                "resourcePath": "scripts\\get_block\\get_block.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -122,7 +130,7 @@
             "Key": "5e94e673-f158-4bbf-b221-447982e9aee6",
             "Value": {
                 "id": "561fc19d-b7df-404f-a731-58ff8f3374bd",
-                "resourcePath": "objects\\o_earth\\o_earth.yy",
+                "resourcePath": "objects\\b_earth\\b_earth.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -215,11 +223,27 @@
             }
         },
         {
+            "Key": "91d4e1bd-1837-4f22-8559-35187bd7d9e2",
+            "Value": {
+                "id": "28fd94c8-c1f5-4097-b017-374c52babed6",
+                "resourcePath": "views\\91d4e1bd-1837-4f22-8559-35187bd7d9e2.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9ded8dce-5b52-4bbb-94cb-a2e44cfdc714",
             "Value": {
                 "id": "a84d5b72-a410-4eb4-9261-8b7b14b97ad6",
                 "resourcePath": "views\\9ded8dce-5b52-4bbb-94cb-a2e44cfdc714.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a3c6b9b1-ac19-4e3f-8194-3abee004a0de",
+            "Value": {
+                "id": "9eb4db51-44e7-4d56-b857-1bed13e391bf",
+                "resourcePath": "objects\\b_empty\\b_empty.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -297,6 +321,7 @@
     ],
     "script_order": [
         "456083c8-5718-49f8-85ef-a6b6830e4f00",
+        "3c9f41fe-13ba-41bf-be8d-de108185a281",
         "7ea27a00-fbb9-4031-b522-3c2ffb8cde84",
         "4ae261e7-0046-468e-b58e-9c98ee90ddea",
         "720d9f2f-606d-4d1d-8d1e-153fd00ea6f7",

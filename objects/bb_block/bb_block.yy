@@ -2,7 +2,7 @@
     "id": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "op_block",
+    "name": "bb_block",
     "eventList": [
         
     ],
@@ -48,7 +48,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "True",
-            "varName": "solid",
+            "varName": "is_solid",
             "varType": 3
         }
     ],
