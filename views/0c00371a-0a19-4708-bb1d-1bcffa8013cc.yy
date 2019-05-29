@@ -4,7 +4,9 @@
     "mvc": "1.1",
     "name": "0c00371a-0a19-4708-bb1d-1bcffa8013cc",
     "children": [
-        "9a04529c-db93-4afe-bc59-a46bae49cbf6"
+        "9a04529c-db93-4afe-bc59-a46bae49cbf6",
+        "da298b78-14e5-4b72-82e8-88a950b4b3f4",
+        "c2701894-0fd3-4295-95b2-8b480e95a211"
     ],
     "filterType": "GMScript",
     "folderName": "math",

@@ -27,9 +27,14 @@ switch(argument0)
 // check ob Bewegung möglich
 var block = get_block(_x_pos_new, _y_pos_new);
 
+x_pos_new = _x_pos_new;
+y_pos_new = _y_pos_new;
+
 if(!block.is_solid)
 {
-	x_pos_new = _x_pos_new;
-	y_pos_new = _y_pos_new;
 	state = "move";
+}
+else
+{
+	state = "moveblocked";	
 }
