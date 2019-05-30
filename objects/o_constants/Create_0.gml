@@ -13,3 +13,6 @@
 
 globalvar is_in_dialogue
 global.is_in_dialogue = false;
+
+globalvar halted;
+global.halted = false;

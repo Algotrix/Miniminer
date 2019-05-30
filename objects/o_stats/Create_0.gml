@@ -4,7 +4,7 @@ godmode = false;
 
 // main Stats
 max_hp = 1;
-max_stamina = 100;
+max_stamina = 10;
 
 move_spd = 0.2;
 mine_dmg = 1;

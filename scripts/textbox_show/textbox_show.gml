@@ -1,4 +1,6 @@
-///@arg text
+///@description show_textbox(text1, text2, text,3, ...)
+if(global.is_in_dialogue) exit;
+global.is_in_dialogue = true;
 
 if(argument_count >= 1) ds_list_add(o_textbox.a_show_text_lines, argument[0]);
 if(argument_count >= 2) ds_list_add(o_textbox.a_show_text_lines, argument[1]);

@@ -99,6 +99,20 @@
             "value": "...",
             "varName": "continue_string",
             "varType": 2
+        },
+        {
+            "id": "5286ecf6-3904-4506-bafa-c801fd5aca4e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "enable_skip",
+            "varType": 3
         }
     ],
     "solid": false,

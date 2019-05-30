@@ -14,8 +14,7 @@
         "bbf36ecd-3a02-42f0-9fd1-f317d4133fed",
         "c966b350-4aa7-4741-8a70-4e4252d83e97",
         "af5067c2-c9f2-4284-a6ab-7ed964cbad1d",
-        "45c57f8b-f5c8-4d1a-9c7b-79eade823d37",
-        "001a4f3e-768c-4ab7-893f-ff257ecde4ae"
+        "45c57f8b-f5c8-4d1a-9c7b-79eade823d37"
     ],
     "filterType": "GMScript",
     "folderName": "object_manipulation_core",

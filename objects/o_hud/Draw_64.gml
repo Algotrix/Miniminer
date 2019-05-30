@@ -17,7 +17,7 @@ if(o_stats.iron_ore > 0)
 
 // stamina bar
 
-stamina_length = lerp(stamina_length, 62 / o_stats.max_stamina * o_stats.stamina, 0.1);
+stamina_length = max(lerp(stamina_length, 62 / o_stats.max_stamina * o_stats.stamina, 0.1), 0);
 var _stamina_col_full = rgb("000088");
 var _stamina_col_empty = rgb("AA0000");
 

@@ -7,9 +7,12 @@ if(!(hp < max_hp)) exit;
 switch(destroy_type)
 {	
 	case "crack":
+		var _old_depth = depth;
+		depth = layer_get_depth(layer_blocks) - 1;
+		
 		if(hp_perc <= 80 && hp_perc > 60)
 		{
-			draw_sprite(s_crack1, 0, x, y);
+			var sp = draw_sprite(s_crack1, 0, x, y);
 		}
 		else if(hp_perc <= 60 && hp_perc > 40)
 		{
@@ -23,6 +26,7 @@ switch(destroy_type)
 		{
 			draw_sprite(s_crack1, 3, x, y);
 		}
+		depth = _old_depth;
 	break;
 	case "reduce":
 	{
