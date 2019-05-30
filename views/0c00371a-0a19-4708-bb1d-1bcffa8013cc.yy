@@ -6,7 +6,8 @@
     "children": [
         "9a04529c-db93-4afe-bc59-a46bae49cbf6",
         "da298b78-14e5-4b72-82e8-88a950b4b3f4",
-        "19c80cd6-07b4-405b-82ed-5c19f2a772a3"
+        "19c80cd6-07b4-405b-82ed-5c19f2a772a3",
+        "7d5f288c-3be5-4196-8ff8-ea95a3cbc7ee"
     ],
     "filterType": "GMScript",
     "folderName": "math",

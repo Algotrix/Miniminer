@@ -487,6 +487,14 @@
             }
         },
         {
+            "Key": "7d5f288c-3be5-4196-8ff8-ea95a3cbc7ee",
+            "Value": {
+                "id": "1241887c-7c53-4ab0-befb-2b36ef64d6b7",
+                "resourcePath": "scripts\\percent_range\\percent_range.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7ea27a00-fbb9-4031-b522-3c2ffb8cde84",
             "Value": {
                 "id": "215fd616-1fa2-46a5-a9d4-7482aff69c4c",
@@ -956,6 +964,7 @@
         "9a04529c-db93-4afe-bc59-a46bae49cbf6",
         "da298b78-14e5-4b72-82e8-88a950b4b3f4",
         "19c80cd6-07b4-405b-82ed-5c19f2a772a3",
+        "7d5f288c-3be5-4196-8ff8-ea95a3cbc7ee",
         "be5effad-2b2b-4d93-9aef-17341a01ac5f",
         "41cbde52-85ba-4ef9-873c-bffdb61fd8af",
         "9a9b6e78-db47-4e16-b4e5-e501c6f184f1",
