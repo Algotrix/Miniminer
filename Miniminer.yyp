@@ -719,6 +719,14 @@
             }
         },
         {
+            "Key": "f78f593a-c1b5-411b-943d-5ecaf9dab85e",
+            "Value": {
+                "id": "5a71e3d9-a64a-476b-84c8-871cb9c99595",
+                "resourcePath": "objects\\b_iron_block\\b_iron_block.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "f8d9972b-bc86-4488-a3c9-ebbd4aa40fa8",
             "Value": {
                 "id": "20b0be6f-625e-4a93-92c6-753a054fbe15",

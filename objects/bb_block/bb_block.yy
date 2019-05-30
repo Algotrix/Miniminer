@@ -107,6 +107,24 @@
             "value": "0",
             "varName": "rnd_image_max",
             "varType": 1
+        },
+        {
+            "id": "5998d35a-75de-4214-9cb4-df034de3a112",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": [
+                "\"crack\"",
+                "\"reduce\"",
+                "\"none\""
+            ],
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "\"crack\"",
+            "varName": "destroy_type",
+            "varType": 6
         }
     ],
     "solid": false,

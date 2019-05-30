@@ -9,4 +9,5 @@ x_pos_new = x_pos;
 y_pos_new = y_pos;
 
 move_dir = dir_none;
+action_dir = dir_none;
 look_dir = dir_right;

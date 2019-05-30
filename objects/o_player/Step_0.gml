@@ -82,10 +82,28 @@ switch(state)
 			var _block = get_block(x_pos_new, y_pos_new);
 			_block.hp -= o_stats.mine_dmg;
 			
-			if(move_dir == dir_down) _block.hit_from = dir_up;
-			if(move_dir == dir_up) _block.hit_from = dir_down;
-			if(move_dir == dir_left) _block.hit_from = dir_right;
-			if(move_dir == dir_right) _block.hit_from = dir_left;
+			#region reduce block-destroy type
+			if(last_action_dir == dir_down) 
+			{
+				_block.reduce_up += 1;
+				_block.hit_from = dir_up;
+			}
+			if(last_action_dir == dir_up) 
+			{
+				_block.reduce_down += 1;
+				_block.hit_from = dir_down;
+			}
+			if(last_action_dir == dir_left) 
+			{
+				_block.reduce_right += 1;
+				_block.hit_from = dir_right;
+			}
+			if(last_action_dir == dir_right) 
+			{
+				_block.reduce_left += 1;
+				_block.hit_from = dir_left;
+			}
+			#endregion
 			
 			x_pos_new = x_pos;
 			y_pos_new = y_pos;

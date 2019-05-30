@@ -1,5 +1,5 @@
 
-godmode = true;
+godmode = false;
 
 // Main Stats
 player_hp = 1;
