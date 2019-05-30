@@ -74,7 +74,7 @@
             "resourceFilter": 1023,
             "value": "1",
             "varName": "max_hp",
-            "varType": 1
+            "varType": 0
         },
         {
             "id": "71ca9880-485a-4c1f-9521-6847f55dc579",
@@ -135,6 +135,34 @@
             "value": "\"crack\"",
             "varName": "destroy_type",
             "varType": 6
+        },
+        {
+            "id": "0d769427-52cb-419e-8241-99158c44b7aa",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1",
+            "varName": "block_size_x",
+            "varType": 1
+        },
+        {
+            "id": "cd022fa6-82af-41eb-9bb2-001beae4ea5d",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1",
+            "varName": "block_size_y",
+            "varType": 1
         }
     ],
     "solid": false,

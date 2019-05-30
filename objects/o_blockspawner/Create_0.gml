@@ -6,9 +6,17 @@ random_set_seed(current_time);
 
 for(var _x_pos = 0;  _x_pos <= max_blocks_x; _x_pos++)
 {
-	for(var _y_pos = 8; _y_pos <= max_blocks_y - 8; _y_pos++)
+	for(var _y_pos = 8; _y_pos <= max_blocks_y; _y_pos++)
 	{
-		create_block(_x_pos, _y_pos, b_earth, b_earth_back, true);
+		if(instance_exists(get_collectible(_x_pos, _y_pos)))
+		{
+			// if collectible is there, djust spawn background
+			create_block(_x_pos, _y_pos, noone, b_earth_back, false)
+		}
+		else
+		{
+			create_block(_x_pos, _y_pos, b_earth, b_earth_back, false)
+		};
 	}
 }
 
