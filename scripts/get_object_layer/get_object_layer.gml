@@ -9,18 +9,19 @@ var _blocks = ds_list_create();
 
 instance_position_list(apos(_x_pos), apos(_y_pos), bb_block, _blocks, true);
 
-dbg("get_block " + string(_x_pos) + "," + string(_y_pos) + " layer  " + string(_layer) + " - found: " + string(ds_list_size(_blocks)))
+var _return_block = noone;
 
 for(var i = 0; i < ds_list_size(_blocks); i++)
 {
 	var _block = ds_list_find_value(_blocks, i);
 	if(_block.layer == layer_get_id(_layer)) 
 	{
-		ds_list_destroy(_blocks);
-		return _block;
+		_return_block = _block;
 	}
 }
 
+dbg("get_block " + string(_x_pos) + "," + string(_y_pos) + " layer  " + string(_layer) + " - found: " + string(_return_block))
+
 ds_list_destroy(_blocks);
 
-return noone;
+return _return_block;

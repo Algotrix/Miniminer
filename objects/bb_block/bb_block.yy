@@ -163,6 +163,20 @@
             "value": "1",
             "varName": "block_size_y",
             "varType": 1
+        },
+        {
+            "id": "0746697b-ea7e-4191-ae79-197b1c83e901",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 256,
+            "value": "b_earth_back",
+            "varName": "default_background",
+            "varType": 5
         }
     ],
     "solid": false,

@@ -12,3 +12,4 @@
 #macro layer_drops "drops"
 
 globalvar is_in_dialogue
+global.is_in_dialogue = false;

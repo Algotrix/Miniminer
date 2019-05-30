@@ -1,0 +1,72 @@
+{
+    "id": "8b228648-d4dd-4c71-be84-b895a3e3e8b3",
+    "modelName": "GMObject",
+    "mvc": "1.0",
+    "name": "b_special_fill",
+    "eventList": [
+        
+    ],
+    "maskSpriteId": "00000000-0000-0000-0000-000000000000",
+    "overriddenProperties": null,
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
+    "persistent": false,
+    "physicsAngularDamping": 0.1,
+    "physicsDensity": 0.5,
+    "physicsFriction": 0.2,
+    "physicsGroup": 0,
+    "physicsKinematic": false,
+    "physicsLinearDamping": 0.1,
+    "physicsObject": false,
+    "physicsRestitution": 0.1,
+    "physicsSensor": false,
+    "physicsShape": 1,
+    "physicsShapePoints": null,
+    "physicsStartAwake": true,
+    "properties": [
+        {
+            "id": "b6e91db3-379a-4f34-8f84-7681eca08a02",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 256,
+            "value": "0",
+            "varName": "block",
+            "varType": 5
+        },
+        {
+            "id": "d4ee00b0-3a26-4171-a8fa-b0e424890577",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 256,
+            "value": "0",
+            "varName": "block_background",
+            "varType": 5
+        },
+        {
+            "id": "5a49ebae-81ea-4b71-afff-b51950b08cb6",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "True",
+            "varName": "replace",
+            "varType": 3
+        }
+    ],
+    "solid": false,
+    "spriteId": "6f16f522-d979-4522-966e-a794e1fb3e5d",
+    "visible": false
+}
