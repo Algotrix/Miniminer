@@ -1,0 +1,12 @@
+1. Stamina bar. unten sieht man 1 diamant. er kommt runter und sammelt den diamanten auf mit letzter not.
+aber sobald er ihn hat, kommt er nicht mehr hoch
+"Ups, wie komme ich jetzt wieder hoch?"
+oben = sprungversuche, kleine hüpfer, bis stamina aus ist, dann
+"das heisst ich muss wohl sterben!"
+
+wach auf.
+
+"ups meine Edelsteine sind noch da!!"
+
+
+weiterer verlauf: Immer nur runter, nicht hoch aber edelsteine bleibene rhalten.
