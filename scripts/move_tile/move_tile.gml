@@ -42,10 +42,12 @@ if(!_block.is_solid)
 	if(instance_exists(_collectible))
 	{
 		state = "collect";
+		player_drain_stamina(o_stats.stamina_drain_move);
 	}
 	else
 	{
 		state = "move";
+		player_drain_stamina(o_stats.stamina_drain_move);
 	}
 }
 else
@@ -53,9 +55,11 @@ else
 	if(o_stats.mine_level < _block.mine_minlevel)
 	{
 		state = "moveblocked";	
+		player_drain_stamina(o_stats.stamina_drain_moveblocked);
 	}
 	else
 	{
 		state = "mine";	
+		player_drain_stamina(o_stats.stamina_drain_mine);
 	}
 }

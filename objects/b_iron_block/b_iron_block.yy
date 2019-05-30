@@ -42,22 +42,6 @@
             "value": "3"
         },
         {
-            "id": "2e96a231-ece4-4054-8d4e-43117ae59a61",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
-            "propertyId": "3291c33c-7ff3-40a0-a234-e93eff3f7027",
-            "value": "c_ore_iron"
-        },
-        {
-            "id": "2b78aaa5-2726-4751-b8b8-674e3d4a5344",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
-            "propertyId": "720e4222-88f4-44c6-9ee7-e00c9b98fae7",
-            "value": "50"
-        },
-        {
             "id": "d090ed38-9a30-4fc0-aab4-544cc7635dc0",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",

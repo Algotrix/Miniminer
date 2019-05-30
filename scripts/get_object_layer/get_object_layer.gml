@@ -7,7 +7,12 @@ var _y_pos = argument1;
 var _layer = argument2;
 var _blocks = ds_list_create();
 
-instance_position_list(apos(_x_pos), apos(_y_pos), bb_block, _blocks, true);
+var _object_type = noone;
+if(_layer == layer_blocks) _object_type = bb_block;
+if(_layer == layer_background) _object_type = bb_block;
+if(_layer == layer_collectibles) _object_type = cb_collectible;
+
+instance_position_list(apos(_x_pos), apos(_y_pos), _object_type, _blocks, true);
 
 var _return_block = noone;
 

@@ -11,3 +11,7 @@ y_pos_new = y_pos;
 move_dir = dir_none;
 action_dir = dir_none;
 look_dir = dir_right;
+
+// actions
+a_drain_stamina = 0;
+a_recieve_damage = 0; 
