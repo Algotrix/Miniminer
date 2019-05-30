@@ -1,6 +1,6 @@
 /// @description Hier Beschreibung einfügen
 
-godmode = false;
+godmode = true;
 
 // Main Stats
 player_hp = 1;
@@ -17,7 +17,7 @@ if(godmode)
 {
 	player_hp = 1;
 	move_spd = 4;
-	mine_dmg = 2;
+	mine_dmg = 20;
 	mine_spd = 4;
 	mine_level = 0;	
 }

@@ -20,4 +20,4 @@ if(_replace)
 	}
 }
 
-return instance_create_layer(pos(_x_pos), pos(_y_pos), _layer, _object);
+return instance_create_layer(apos(_x_pos), apos(_y_pos), _layer, _object);

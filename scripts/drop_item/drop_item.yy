@@ -1,8 +1,8 @@
 {
-    "id": "a9ed6e55-3e5f-40ae-b544-0e9a5ce9b7f0",
+    "id": "2388e07d-c601-488e-97e3-9a04f623c0f9",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "pos",
+    "name": "drop_item",
     "IsCompatibility": false,
     "IsDnD": false
 }

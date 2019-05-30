@@ -40,8 +40,8 @@ switch(state)
 		state_move_smooth("idle");
 		break;
 	case "moveblocked":
-		var x_target = pos(x_pos) + ((pos(x_pos_new) - pos(x_pos)) / 4);
-		var y_target = pos(y_pos) + ((pos(y_pos_new) - pos(y_pos)) / 4);
+		var x_target = apos(x_pos) + ((apos(x_pos_new) - apos(x_pos)) / 4);
+		var y_target = apos(y_pos) + ((apos(y_pos_new) - apos(y_pos)) / 4);
 		x = approach(x, x_target, o_stats.move_spd);
 		y = approach(y, y_target, o_stats.move_spd);
 	
@@ -53,17 +53,17 @@ switch(state)
 		}
 		break;
 	case "moveblocked_back":
-		x = approach(x, pos(x_pos), o_stats.move_spd);
-		y = approach(y, pos(y_pos), o_stats.move_spd);
+		x = approach(x, apos(x_pos), o_stats.move_spd);
+		y = approach(y, apos(y_pos), o_stats.move_spd);
 	
-		if(x == pos(x_pos) && y == pos(y_pos))
+		if(x == apos(x_pos) && y == apos(y_pos))
 		{
 			state = "idle";
 		}
 		break;
 	case "mine":
-		var x_target = pos(x_pos) + ((pos(x_pos_new) - pos(x_pos)) / 4);
-		var y_target = pos(y_pos) + ((pos(y_pos_new) - pos(y_pos)) / 4);
+		var x_target = apos(x_pos) + ((apos(x_pos_new) - apos(x_pos)) / 4);
+		var y_target = apos(y_pos) + ((apos(y_pos_new) - apos(y_pos)) / 4);
 		x = approach(x, x_target, o_stats.mine_spd);
 		y = approach(y, y_target, o_stats.mine_spd);
 		
@@ -79,18 +79,24 @@ switch(state)
 		
 		if(x == x_target && y == y_target)
 		{
-			var block = get_block(x_pos_new, y_pos_new);
-			block.hp -= o_stats.mine_dmg;
+			var _block = get_block(x_pos_new, y_pos_new);
+			_block.hp -= o_stats.mine_dmg;
+			
+			if(move_dir == dir_down) _block.hit_from = dir_up;
+			if(move_dir == dir_up) _block.hit_from = dir_down;
+			if(move_dir == dir_left) _block.hit_from = dir_right;
+			if(move_dir == dir_right) _block.hit_from = dir_left;
+			
 			x_pos_new = x_pos;
 			y_pos_new = y_pos;
 			state = "mine_moveback";
 		}
 		break;
 	case "mine_moveback":
-		x = approach(x, pos(x_pos), o_stats.mine_spd);
-		y = approach(y, pos(y_pos), o_stats.mine_spd);
+		x = approach(x, apos(x_pos), o_stats.mine_spd);
+		y = approach(y, apos(y_pos), o_stats.mine_spd);
 	
-		if(x == pos(x_pos) && y == pos(y_pos))
+		if(x == apos(x_pos) && y == apos(y_pos))
 		{
 			state = "idle";
 		}

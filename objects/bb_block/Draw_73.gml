@@ -18,9 +18,3 @@ else if(hp_perc <= 20)
 {
 	draw_sprite(s_crack1, 3, x, y);
 }
-
-if(hp <= 0) 
-{
-	dbg("block_destroy")
-	killme();
-}

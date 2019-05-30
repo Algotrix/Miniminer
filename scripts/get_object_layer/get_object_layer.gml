@@ -7,7 +7,7 @@ var _y_pos = argument1;
 var _layer = argument2;
 var _blocks = ds_list_create();
 
-instance_position_list(pos(_x_pos), pos(_y_pos), bb_block, _blocks, true);
+instance_position_list(apos(_x_pos), apos(_y_pos), bb_block, _blocks, true);
 
 dbg("get_block " + string(_x_pos) + "," + string(_y_pos) + " layer  " + string(_layer) + " - found: " + string(ds_list_size(_blocks)))
 

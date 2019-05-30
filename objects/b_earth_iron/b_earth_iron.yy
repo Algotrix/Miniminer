@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "b_earth_iron",
     "eventList": [
-        
+        {
+            "id": "b1a6e714-9341-4898-9724-5377dd3575c6",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 1,
+            "m_owner": "e7a22bb0-954c-4350-87cf-36bb39541930"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": [
@@ -31,6 +40,22 @@
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
             "propertyId": "96fd74cd-b524-42c4-b383-a7eeb95f76dc",
             "value": "3"
+        },
+        {
+            "id": "12556f07-f040-4575-b619-cd68fa537757",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
+            "propertyId": "3291c33c-7ff3-40a0-a234-e93eff3f7027",
+            "value": "c_ore_iron"
+        },
+        {
+            "id": "df5be38f-fd82-4773-b232-79f317dde0b5",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
+            "propertyId": "720e4222-88f4-44c6-9ee7-e00c9b98fae7",
+            "value": "50"
         }
     ],
     "parentObjectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
