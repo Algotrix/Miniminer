@@ -80,31 +80,8 @@ switch(state)
 		if(x == x_target && y == y_target)
 		{
 			var _block = get_block(x_pos_new, y_pos_new);
-			_block.hp -= o_stats.mine_dmg;
-			
-			#region reduce block-destroy type
-			if(last_action_dir == dir_down) 
-			{
-				_block.reduce_up += 1;
-				_block.hit_from = dir_up;
-			}
-			if(last_action_dir == dir_up) 
-			{
-				_block.reduce_down += 1;
-				_block.hit_from = dir_down;
-			}
-			if(last_action_dir == dir_left) 
-			{
-				_block.reduce_right += 1;
-				_block.hit_from = dir_right;
-			}
-			if(last_action_dir == dir_right) 
-			{
-				_block.reduce_left += 1;
-				_block.hit_from = dir_left;
-			}
-			#endregion
-			
+			block_apply_damage(_block, o_stats.mine_dmg, reverse_dir(last_action_dir));
+						
 			x_pos_new = x_pos;
 			y_pos_new = y_pos;
 			state = "mine_moveback";

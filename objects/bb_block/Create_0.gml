@@ -1,8 +1,10 @@
-/// @description Hier Beschreibung einfügen
+
 hp = max_hp;
 image_index = irandom(rnd_image_max);
 
-hit_from = dir_none;
+// Events / Actions
+a_recieve_damage = 0;
+a_recieve_damage_hit_from = dir_none;
 
 // misc
 reduce_up = 0;
