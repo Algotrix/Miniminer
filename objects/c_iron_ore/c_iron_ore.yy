@@ -2,9 +2,18 @@
     "id": "47404ed3-5695-4cae-8a67-3e89c5456a2c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "c_ore_iron",
+    "name": "c_iron_ore",
     "eventList": [
-        
+        {
+            "id": "4b0f051c-7b6a-42f8-b05d-99130a9ba97f",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "8c80227a-cdb0-43fd-97ad-f509ddb3b46d",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "47404ed3-5695-4cae-8a67-3e89c5456a2c"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

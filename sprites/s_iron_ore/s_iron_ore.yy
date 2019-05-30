@@ -2,7 +2,7 @@
     "id": "5095509b-70ee-4f00-bcc3-b4829a390b84",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "s_ore_iron",
+    "name": "s_iron_ore",
     "For3D": false,
     "HTile": false,
     "VTile": false,

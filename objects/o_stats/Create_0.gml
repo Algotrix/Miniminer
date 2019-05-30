@@ -1,4 +1,3 @@
-/// @description Hier Beschreibung einfügen
 
 godmode = true;
 
@@ -9,7 +8,9 @@ mine_dmg = 1;
 mine_spd = 0.08;
 mine_level = 0;
 
+// Resources
 shinies = 0;
+iron_ore = 0;
 
 
 #region godmode

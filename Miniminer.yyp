@@ -226,7 +226,7 @@
             "Key": "47404ed3-5695-4cae-8a67-3e89c5456a2c",
             "Value": {
                 "id": "36f1ee51-b15c-41d6-85b9-6173a9a1eaf9",
-                "resourcePath": "objects\\c_ore_iron\\c_ore_iron.yy",
+                "resourcePath": "objects\\c_iron_ore\\c_iron_ore.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -258,7 +258,7 @@
             "Key": "5095509b-70ee-4f00-bcc3-b4829a390b84",
             "Value": {
                 "id": "f9482311-a3bc-424d-9bc6-1b4d22ed46a7",
-                "resourcePath": "sprites\\s_ore_iron\\s_ore_iron.yy",
+                "resourcePath": "sprites\\s_iron_ore\\s_iron_ore.yy",
                 "resourceType": "GMSprite"
             }
         },

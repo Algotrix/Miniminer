@@ -4,16 +4,7 @@
     "mvc": "1.0",
     "name": "cb_ressource",
     "eventList": [
-        {
-            "id": "c3cdc3ff-dc56-4733-a3f3-da629c185005",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "8c80227a-cdb0-43fd-97ad-f509ddb3b46d",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "1915114b-5fec-4c33-998d-fb27976a192a"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
