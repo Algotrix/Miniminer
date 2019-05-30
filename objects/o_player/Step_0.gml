@@ -1,4 +1,5 @@
-//dbg(string(x_pos) + "," + string(y_pos));
+if(global.is_in_dialogue) exit;
+
 move_dir = dir_none;
 switch(state)
 {

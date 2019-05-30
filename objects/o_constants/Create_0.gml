@@ -10,3 +10,5 @@
 #macro layer_background "blocks_back"
 #macro layer_collectibles "collectibles"
 #macro layer_drops "drops"
+
+globalvar is_in_dialogue

@@ -1,3 +1,4 @@
+global.is_in_dialogue = false;
 
 godmode = true;
 
