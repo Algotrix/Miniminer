@@ -17,6 +17,8 @@ a_show_color_name = ds_list_create();
 
 // states
 state = "";
+counter_init = false;
 
-continue_delay_counter = a_show_continue_wait;
+continue_delay_counter = 0;
+continue_min_delay = 20;
 show_line = 0;

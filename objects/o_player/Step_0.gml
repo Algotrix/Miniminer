@@ -1,4 +1,4 @@
-if(global.is_in_dialogue) exit;
+if(global.is_in_dialogue || global.halted) exit;
 
 move_dir = dir_none;
 switch(state)

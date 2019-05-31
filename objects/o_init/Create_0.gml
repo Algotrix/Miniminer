@@ -10,9 +10,12 @@
 #macro layer_background "blocks_back"
 #macro layer_collectibles "collectibles"
 #macro layer_drops "drops"
+#macro layer_game "game"
 
 globalvar is_in_dialogue
 global.is_in_dialogue = false;
 
 globalvar halted;
 global.halted = false;
+
+room_goto_next();
