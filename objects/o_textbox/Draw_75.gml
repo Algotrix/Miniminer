@@ -58,7 +58,7 @@ if(state == "show")
 	#region text
 	draw_set_color(_a_show_color_text);
 	draw_text_ext(_x1 + _text_margin,
-				  _y1 + _text_margin - 1,
+				  _y1 + _text_margin - 2,
 				  _a_show_text_lines,
 				  string_height(continue_string) + 1, 
 				  _x2 - _x1 - _text_margin * 2);

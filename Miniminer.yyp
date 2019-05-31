@@ -479,6 +479,14 @@
             }
         },
         {
+            "Key": "6c54677f-372c-4ba9-bfbd-4ac1a69cabab",
+            "Value": {
+                "id": "5dfe0475-55a1-4bfa-951b-294452ae4515",
+                "resourcePath": "notes\\achievements.yy",
+                "resourceType": "GMNotes"
+            }
+        },
+        {
             "Key": "6cac5b3f-8120-40ce-8799-be0fbfc6e03d",
             "Value": {
                 "id": "a5b7d23d-8700-471b-8fe4-cc769d15ee48",
