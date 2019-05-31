@@ -73,20 +73,6 @@
     "physicsStartAwake": true,
     "properties": [
         {
-            "id": "e0ab11ee-8c4b-47e4-971e-2639bcac5bcd",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "120",
-            "varName": "continue_delay",
-            "varType": 1
-        },
-        {
             "id": "b1076ea5-4b47-46f1-8a20-34f158031fc4",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -101,7 +87,7 @@
             "varType": 2
         },
         {
-            "id": "5286ecf6-3904-4506-bafa-c801fd5aca4e",
+            "id": "0cd77195-fead-4f0a-9bbf-58ab84043c4c",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -110,9 +96,9 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "True",
-            "varName": "enable_skip",
-            "varType": 3
+            "value": "X",
+            "varName": "continue_end_string",
+            "varType": 2
         }
     ],
     "solid": false,
