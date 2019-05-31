@@ -4,7 +4,7 @@
 //create_random_block_amount(10, 14, 1, b_earth_iron, b_earth_back);
 //create_random_block_amount(10, 14, 1, b_earth, b_earth_back);
 
-max_blocks_x = room_width / 8 - 1;
+max_blocks_x = 24;  //room_width / 8 - 1;
 max_blocks_y = room_height / 8 - 1;
 
 if(block_init) exit;

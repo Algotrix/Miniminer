@@ -11,6 +11,7 @@
 #macro layer_collectibles "collectibles"
 #macro layer_drops "drops"
 #macro layer_game "game"
+#macro layer_special "special_blocks"
 
 globalvar is_in_dialogue
 global.is_in_dialogue = false;

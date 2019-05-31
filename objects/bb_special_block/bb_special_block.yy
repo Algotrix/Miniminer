@@ -1,39 +1,39 @@
 {
-    "id": "87e2ee40-6511-4245-9958-dae0d4bb4a1f",
+    "id": "4a252630-bf79-4762-8ac4-38e08b7a6cff",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "b_stone",
+    "name": "bb_special_block",
     "eventList": [
         
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": [
         {
-            "id": "fe7f7ccf-7e2c-4798-8504-36cb17797fe9",
+            "id": "0513dc45-de61-48ac-9349-29d0c6b2417e",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
+            "propertyId": "71ca9880-485a-4c1f-9521-6847f55dc579",
+            "value": "False"
+        },
+        {
+            "id": "a129ff91-43d0-4a2b-9170-b31b3221adf3",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
             "propertyId": "1e13b65d-b610-45e3-b944-31f1fa52dcb1",
-            "value": "10"
+            "value": "99"
         },
         {
-            "id": "593d1449-1abe-4419-88aa-9a1a9c95d9c5",
+            "id": "33b457e5-0c1b-4254-8d92-9eff437d67cb",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
             "propertyId": "d382b623-d13d-465c-b350-f3194ffc34e8",
-            "value": "2"
-        },
-        {
-            "id": "63acb874-09a1-442c-b41c-2f4a0b8ef690",
-            "modelName": "GMOverriddenProperty",
-            "mvc": "1.0",
-            "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
-            "propertyId": "96fd74cd-b524-42c4-b383-a7eeb95f76dc",
-            "value": "3"
+            "value": "99"
         }
     ],
-    "parentObjectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -49,6 +49,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "5eb1a811-e201-4960-9845-09c8cabcbf6c",
+    "spriteId": "00000000-0000-0000-0000-000000000000",
     "visible": true
 }

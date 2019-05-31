@@ -11,6 +11,7 @@ var _object_type = noone;
 if(_layer == layer_blocks) _object_type = bb_block;
 if(_layer == layer_background) _object_type = bb_block;
 if(_layer == layer_collectibles) _object_type = cb_collectible;
+if(_layer == layer_special) _object_type = bb_special_block;
 
 instance_position_list(apos(_x_pos), apos(_y_pos), _object_type, _blocks, true);
 

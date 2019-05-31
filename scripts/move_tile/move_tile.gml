@@ -30,12 +30,28 @@ switch(_action_dir)
 }
 
 
-// check ob Bewegung möglich
+// check ob Bewegung 
+var _special = get_special(_x_pos_new, _y_pos_new);
 var _block = get_block(_x_pos_new, _y_pos_new);
 var _collectible = get_collectible(_x_pos_new, _y_pos_new);
 
 x_pos_new = _x_pos_new;
 y_pos_new = _y_pos_new;
+
+if(instance_exists(_special))
+{
+	dbg("special found");
+	if(_special.object_index == b_special_event.object_index)
+	{
+		dbg("special event " + _special.trigger_event);	
+		if(!(_special.num_triggers >= _special.max_triggers) && !_special.needs_action)
+		{
+			o_events.a_event = _special.trigger_event;
+			o_events.a_event_delay = _special.trigger_delay;
+			_special.num_triggers += 1;
+		}
+	}
+}
 
 if(!_block.is_solid)
 {
