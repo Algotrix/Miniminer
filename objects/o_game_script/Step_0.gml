@@ -24,6 +24,7 @@ else if(progress == "start_fadein")
 	if(o_fadein.fadein_done)
 	{
 		progress = "start_forreal";
+		instance_destroy(o_fadein);
 	}
 }
 else if(progress == "start_forreal")
@@ -75,7 +76,7 @@ else if(progress == "pre_death3")
 		}
 		else if(pre_death_potions_drank == 1)
 		{
-			textbox_show("Oh.. i found another one....");
+			textbox_show("Oh.. i found another potion....");
 			progress = "pre_death3_wait";
 		}
 		else if(pre_death_potions_drank < _potions_max)
@@ -86,14 +87,13 @@ else if(progress == "pre_death3")
 		else if(pre_death_potions_drank == _potions_max )
 		{
 			textbox_show("There goes the last one...", "Please don't let me die...");
-			progress = "pre_death3_wait";
+			progress = "pre_death4";
+			pre_death_potions_drank += 1;
+			o_stats.stamina = o_stats.max_stamina;
 		}
-		else if(pre_death_potions_drank == _potions_max + 1)
-		{
-			progress = "pre_death4";	
-		}
-		
 	}
+
+
 }
 else if(progress == "pre_death3_wait")
 {
@@ -113,26 +113,35 @@ else if(progress == "pre_death5")
 {
 	if(_stamina_percent	<= 0)
 	{
-		textbox_add("Aaaaaaaaaaahhhh!", false, 300, false, rgb("AA0000"), c_black, c_white);	
-		textbox_add("aaa. .aaaa.  .. a.a.a", true, 300, false, c_black, c_red, c_red);
-		textbox_add("", false, 300, false, make_color_rgb(30, 30, 30), c_black);
-		textbox_show_ext();
-		global.halted = true;
-		progress = "pre_death5_fadeout"
+		if(!instance_exists(o_fadeout))
+		{
+			instance_create_depth(-1, -1, 0, o_fadeout);
+		}
+
+		if(!pre_death5_textshown) // wait for fadeout
+		{
+			textbox_add("Aaaaaaaaaaahhhh!", false, 300, false, rgb("AA0000"), c_black, c_white);	
+			textbox_add("aaa. .aaaa.  .. a.a.a", true, 300, false, c_black, c_red, c_red);
+			textbox_add("OoooO OoO ooOOoO oOo OOoOooOOo Oooo", true, 300, false, c_black, c_red, c_red);
+			textbox_add("", false, 300, false, make_color_rgb(30, 30, 30), c_black);
+			textbox_show_ext();
+		
+			global.halted = true;
+			pre_death5_textshown = true;
+		}
+		
+		if(o_fadeout.fadeout_done)
+		{
+			progress = "pre_death5_fadeout"
+		}
 	}
 }
 else if(progress == "pre_death5_fadeout")
 {
-	if(!instance_exists(o_fadeout))
-	{
-		instance_create_depth(-1, -1, 0, o_fadeout);
-	}
-	if(o_fadeout.fadeout_done)
-	{
-		progress = "pre_death5_fadein";
-		textbox_add("Never gonna give me up never gonna let me down", false, 300, false, make_color_rgb(1, 1, 1), rgb("222222"), c_black);
-		textbox_show_ext();
-	}
+	textbox_add("Never gonna give me up never gonna let me down", false, 300, false, make_color_rgb(1, 1, 1), rgb("222222"), c_black);
+	textbox_show_ext();
+	progress = "pre_death5_fadein";
+
 }
 else if(progress == "pre_death5_fadein")
 {
@@ -151,7 +160,7 @@ else if(progress == "pre_death5_end")
 	instance_destroy(o_fadein);
 	textbox_add("!!!!!!!", false, 60, false, c_black, c_red);
 	textbox_add("oh..", false, 60, false, c_black, c_white);
-	textbox_add("what's in this pocket? let's see..", false, 60, false, c_black, c_white);
+	textbox_add("what's that in my pocket? let's see..", false, 60, false, c_black, c_white);
 	textbox_add("oops, i totally forgot about...", false, 60, false);
 	textbox_add("...that bag with unlimited potions", false, 300, false);
 	textbox_add("sorry, my fault...", false, 60, false);
