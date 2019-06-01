@@ -16,6 +16,7 @@ eventarg2 = a_eventarg2;
 
 // event states
 pre_death_go_left_count = 0;
+pre_death_mountain_up_y = -1;
 
 // global event states
 event_first_shiney_triggered = false;

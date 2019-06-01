@@ -13,10 +13,7 @@
 #macro layer_game "game"
 #macro layer_special "special_blocks"
 
-globalvar is_in_dialogue
 global.is_in_dialogue = false;
-
-globalvar halted;
 global.halted = false;
 
 room_goto_next();

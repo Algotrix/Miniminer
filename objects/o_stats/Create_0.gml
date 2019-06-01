@@ -1,5 +1,3 @@
-global.is_in_dialogue = false;
-
 godmode = false;
 
 // main Stats

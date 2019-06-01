@@ -1,7 +1,6 @@
 /// @description Hier Beschreibung einfügen
 if(state == "show")
 {
-	
 	#region init
 	var _dw = display_get_gui_width();
 	var _dh = display_get_gui_height();
@@ -30,6 +29,10 @@ if(state == "show")
 		var _y2 = _dh - _dh * 0.6;
 		var _name_x = _dw - _x1 - string_width(_a_show_name);
 		var _name_y = _y2 + 2;
+		var _nameframe_x1 = _x2 - string_width(_a_show_name) - 2;
+		var _nameframe_y1 = _y2;
+		var _nameframe_x2 = _x2;
+		var _nameframe_y2 = _y2 + string_height(_a_show_name) + 1;
 	}
 	else 
 	{
@@ -40,6 +43,10 @@ if(state == "show")
 		var _y2 = _dh - _x1;
 		var _name_x = _x1 + 1;
 		var _name_y = _y1 - string_height(_a_show_name) + 1
+		var _nameframe_x1 = _x1;
+		var _nameframe_y1 = _y1;
+		var _nameframe_x2 = _x1 + string_width(_a_show_name) + 1;
+		var _nameframe_y2 = _y1 - string_height(_a_show_name) - 1;		
 	}
 	#endregion
 
@@ -68,24 +75,7 @@ if(state == "show")
 	if(_a_show_name != "")
 	{
 		draw_set_color(_a_show_color_dialog);
-		if(_a_show_position)
-		{
-			// top
-			draw_rectangle(_x2 - string_width(_a_show_name) - 2, 
-				_y2,
-				_x2,
-				_y2 + string_height(_a_show_name) + 1, 
-				false);
-		}
-		else
-		{
-			// bottom
-			draw_rectangle(_x1, 
-						   _y1,
-						   _x1 + string_width(_a_show_name) + 1,
-						   _y1 - string_height(_a_show_name) - 1, 
-						   false);
-		}
+		draw_rectangle(_nameframe_x1, _nameframe_y1, _nameframe_x2,	_nameframe_y2, false);
 	}
 	#endregion
 	
