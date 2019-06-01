@@ -15,3 +15,6 @@ look_dir = dir_right;
 // actions
 a_drain_stamina = 0;
 a_recieve_damage = 0; 
+
+// speciabl behaviour
+special_cant_move_up = false;

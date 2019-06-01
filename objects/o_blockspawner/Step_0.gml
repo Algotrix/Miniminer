@@ -17,6 +17,8 @@ with(b_special_fill)
 	fill_simple(pos(x), pos(y), block, block_background, replace);
 }
 
+exit;
+
 for(var _x_pos = 0;  _x_pos <= max_blocks_x; _x_pos++)
 {
 	for(var _y_pos = 8; _y_pos <= max_blocks_y; _y_pos++)

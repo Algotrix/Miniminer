@@ -17,6 +17,8 @@ eventarg2 = a_eventarg2;
 // event states
 pre_death_go_left_count = 0;
 pre_death_mountain_up_y = -1;
+pre_death_mountain_up_vsp = 1;
+pre_death_got_shiney_triggered = false;
+pre_death_show_shopkeep_pos = 0;
 
 // global event states
-event_first_shiney_triggered = false;

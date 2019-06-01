@@ -33,11 +33,11 @@
             "value": "0"
         },
         {
-            "id": "cdf1ba93-5003-4e73-85e9-bfc7b158e76e",
+            "id": "e2c54965-5601-493e-9754-ccc4f40d0400",
             "modelName": "GMOverriddenProperty",
             "mvc": "1.0",
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
-            "propertyId": "71ca9880-485a-4c1f-9521-6847f55dc579",
+            "propertyId": "375181b5-332c-472b-be2f-dca3b911d415",
             "value": "False"
         }
     ],

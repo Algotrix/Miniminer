@@ -22,10 +22,10 @@ if(a_event != "" && a_event_delay <= 0)
 #endregion
 
 #region check for global events to selftrigger
-if(global.shinies > 0 && !event_first_shiney_triggered)
+if(global.shinies > 0 && !pre_death_got_shiney_triggered)
 {
-	event_first_shiney_triggered = true;	
-	textbox_show("Wow! A Shiney!", "This must be worth a Marillion!");
+	pre_death_got_shiney_triggered = true;	
+	o_game_script.state = "pre_death_got_shiney";
 }
 
 #endregion
@@ -60,22 +60,35 @@ if(state == "pre_death_go_left")
 }
 #endregion
 
+#region pre_death_mountain_up
 if(state == "pre_death_mountain_up")
 {
-	if(pre_death_mountain_up_y == 0)
+	if(pre_death_mountain_up_y == -1)
 	{
 		pre_death_mountain_up_y	= o_player.y;
 	}
+	pre_death_mountain_up_vsp -= 0.1;
+	o_player.y -= pre_death_mountain_up_vsp;
 	
-	if(o_player.y > pre_death_mountain_up_y + 40)
+	if(o_player.y > pre_death_mountain_up_y)
 	{
-		o_player.y = pre_death_mountain_up_y + 40
-	}
-	if(o_player.y <= pre_death_mountain_up_y)
-	{
-		o_player.y = pre_death_mountain_up_y + 40
+		state = "end";	
+		player_drain_stamina(10);
+		textbox_show("It's too high");
+		pre_death_mountain_up_vsp = 1;
 	}
 }
+#endregion
+
+#region pre_death_show_shopkeep
+if(state == "pre_death_show_shopkeep")
+{
+	instance_create_layer(apos(1), apos(7), layer_game, eo_pre_death_show_shopkeep);
+	state = "end";
+}
+#endregion
+
+
 
 #region end
 if(state == "end")

@@ -1,6 +1,6 @@
 if(global.is_in_dialogue) exit;
 
-if(progress == "test")
+if(state == "test")
 {
 	textbox_add("hello, here am i!", false, 300, true, c_black, c_white, c_red, "The New One", c_red);	
 	textbox_add("another fancy dialogue - yay!", true, 300, false, c_black, c_blue, c_white, "Der da!");
@@ -10,12 +10,12 @@ if(progress == "test")
 }
 
 #region start
-if(progress == "start")
+if(state == "start")
 {
 	global.halted = true;
-	progress = "start_fadein";
+	state = "start_fadein";
 }
-else if(progress == "start_fadein")
+else if(state == "start_fadein")
 {
 	if(!instance_exists(o_fadein))
 	{
@@ -23,15 +23,15 @@ else if(progress == "start_fadein")
 	}
 	if(o_fadein.fadein_done)
 	{
-		progress = "start_forreal";
+		state = "start_forreal";
 		instance_destroy(o_fadein);
 	}
 }
-else if(progress == "start_forreal")
+else if(state == "start_forreal")
 {
 	textbox_show("Uuuh what happened?")	;
 	global.halted = false;
-	progress = "pre_death1";
+	state = "pre_death1";
 }
 #endregion
 
@@ -39,55 +39,55 @@ else if(progress == "start_forreal")
 var _potions_max = 5;
 var _stamina_percent = global.stamina / global.max_stamina * 100;
 
-if(progress == "pre_death1")
+if(state == "pre_death1")
 {
 	if(_stamina_percent	<= 50)
 	{
 		textbox_show("I'm getting exhausted...");
-		progress = "pre_death2";
+		state = "pre_death2";
 	}
 }
-else if(progress == "pre_death2")
+else if(state == "pre_death2")
 {
 	if(_stamina_percent	<= 25)
 	{
 		textbox_show("I'm feeling dizzy...", "I will surely die if i run out of stamina");
-		progress = "pre_death2b";
+		state = "pre_death2b";
 	}
 }
-else if(progress == "pre_death2b")
+else if(state == "pre_death2b")
 {
 	if(_stamina_percent	<= 5)
 	{
 		var _text = "I'm... collapsing .. .. .";
 		if(pre_death_potions_drank >= 1) _text += " again";
 		textbox_show(_text);
-		progress = "pre_death3";
+		state = "pre_death3";
 	}
 }
-else if(progress == "pre_death3")
+else if(state == "pre_death3")
 {
 	if(_stamina_percent	<= 0)
 	{
 		if(pre_death_potions_drank == 0)
 		{
 			textbox_show("I guess i should drink this one last potion.");
-			progress = "pre_death3_wait";
+			state = "pre_death3_wait";
 		}
 		else if(pre_death_potions_drank == 1)
 		{
 			textbox_show("Oh.. i found another potion....");
-			progress = "pre_death3_wait";
+			state = "pre_death3_wait";
 		}
 		else if(pre_death_potions_drank < _potions_max)
 		{
 			textbox_show("Here's some more. Only " + string(_potions_max - pre_death_potions_drank) +" left.");
-			progress = "pre_death3_wait";
+			state = "pre_death3_wait";
 		}
 		else if(pre_death_potions_drank == _potions_max )
 		{
 			textbox_show("There goes the last one...", "Please don't let me die...");
-			progress = "pre_death4";
+			state = "pre_death4";
 			pre_death_potions_drank += 1;
 			global.stamina = global.max_stamina;
 		}
@@ -95,21 +95,21 @@ else if(progress == "pre_death3")
 
 
 }
-else if(progress == "pre_death3_wait")
+else if(state == "pre_death3_wait")
 {
-	progress = "pre_death1";
+	state = "pre_death1";
 	pre_death_potions_drank += 1;
 	global.stamina = global.max_stamina;
 }
-else if(progress == "pre_death4")
+else if(state == "pre_death4")
 {
 	if(_stamina_percent	< 20)
 	{
 		textbox_show("Dont", "do", "this", "to", "me", "....", "please!!!!!!");
-		progress = "pre_death5";
+		state = "pre_death5";
 	}
 }
-else if(progress == "pre_death5")
+else if(state == "pre_death5")
 {
 	if(_stamina_percent	<= 0)
 	{
@@ -132,18 +132,18 @@ else if(progress == "pre_death5")
 		
 		if(o_fadeout.fadeout_done)
 		{
-			progress = "pre_death5_fadeout"
+			state = "pre_death5_fadeout"
 		}
 	}
 }
-else if(progress == "pre_death5_fadeout")
+else if(state == "pre_death5_fadeout")
 {
 	textbox_add("Never gonna give me up never gonna let me down", false, 300, false, make_color_rgb(1, 1, 1), rgb("222222"), c_black);
 	textbox_show_ext();
-	progress = "pre_death5_fadein";
+	state = "pre_death5_fadein";
 
 }
-else if(progress == "pre_death5_fadein")
+else if(state == "pre_death5_fadein")
 {
 	if(!instance_exists(o_fadein))
 	{
@@ -152,10 +152,10 @@ else if(progress == "pre_death5_fadein")
 	}
 	if(o_fadein.fadein_done)
 	{
-		progress = "pre_death5_end";
+		state = "pre_death5_end";
 	}
 }
-else if(progress == "pre_death5_end")
+else if(state == "pre_death5_end")
 {
 	instance_destroy(o_fadein);
 	textbox_add("!!!!!!!", false, 60, false, c_black, c_red);
@@ -166,22 +166,76 @@ else if(progress == "pre_death5_end")
 	textbox_add("sorry, my fault...", false, 60, false);
 	textbox_add("well yeah, keep on diggin' and so", false, 180, false);
 	textbox_show_ext();
-	progress = "pre_death6_refill";	
+	state = "pre_death6_refill";	
 	global.halted = false;
 }
-else if(progress == "pre_death6_refill")
+else if(state == "pre_death6_refill")
 {
-	progress = "pre_death6";
+	state = "pre_death6";
 	pre_death_potions_drank += 1;
 	global.stamina = global.max_stamina;
 }
-else if(progress == "pre_death6")
+else if(state == "pre_death6")
 {
 	if(_stamina_percent	<= 0)
 	{
 		textbox_show("I should drink a potion.");
-		progress = "pre_death6_refill";
+		state = "pre_death6_refill";
 	}
 }
 #endregion
+
+if(state == "pre_death_got_shiney")
+{	
+	textbox_show("Wow! A Shiney!", "This must be worth a Marillion!", "And it's MINE!", "Its....... M I N E");
+	
+	state = "pre_death_got_shiney2";
+}
+else if(state == "pre_death_got_shiney2")
+{	
+	pre_death_got_shiney2_wait -= 1;
+	if (pre_death_got_shiney2_wait == 0)
+	{
+		o_player.sprite_index = s_shiny1_green;
+		o_player.special_cant_move_up = true;
+		textbox_add("Harr Harr Harr!!!", false, 120, false, make_color_rgb(0, 128, 0));
+		textbox_add("I AM RICH $$$", true, 120, false, make_color_rgb(0, 128, 0));
+		textbox_show_ext();
+		state = "pre_death_got_shiney3";
+	}
+	
+	
+}
+else if(state == "pre_death_got_shiney3")
+{	
+	var _wait = 30;
+	pre_death_got_shiney3_jumped_wait -= 1;
+	if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped < 3)
+	{
+		pre_death_got_shiney3_jumped += 1;
+		pre_death_got_shiney3_jumped_wait = _wait;
+	}
+	else if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped = 3)
+	{
+		textbox_add("What! I'm too heavy!!", false, 120, false, make_color_rgb(0, 128, 0));
+		textbox_show_ext();
+		pre_death_got_shiney3_jumped += 1;
+		pre_death_got_shiney3_jumped_wait = _wait;
+		state = "pre_death_got_shiney4";
+	}
+	else if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped = 5)
+	{
+		textbox_add("No No No!! I won't drop the Shiney!", false, 120, false, make_color_rgb(0, 128, 0));
+		textbox_show_ext();
+		pre_death_got_shiney3_jumped += 1;
+		pre_death_got_shiney3_jumped_wait = _wait;
+		state = "pre_death_got_shiney4";
+	}
+	
+	
+}
+else if(state == "pre_death_got_shiney4")
+{
+	
+}
 

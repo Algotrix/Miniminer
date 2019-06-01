@@ -1,6 +1,8 @@
 /// @description Hier Beschreibung einfügen
 
 draw_set_color(c_white);
+
+#region resources
 if(global.shinies > 0)
 {
 	draw_set_font(font_text);
@@ -14,9 +16,10 @@ if(global.iron_ore > 0)
 	draw_sprite(s_iron_ore, 0, 10, 21);
 	draw_text(18, 15, string(global.iron_ore));
 }
+#endregion
 
-// stamina bar
 
+#region stamina bar
 stamina_length = max(lerp(stamina_length, 62 / global.max_stamina * global.stamina, 0.1), 0);
 var _stamina_col_full = rgb("000088");
 var _stamina_col_empty = rgb("AA0000");
@@ -40,3 +43,18 @@ draw_rectangle(60, 6, 122, 8, false);
 
 draw_set_color(_stamina_col);
 draw_rectangle(60, 6, 60 + stamina_length, 8, false);
+#endregion
+
+#region debug
+if(global.drawdebug)
+{
+	draw_set_color(c_navy);
+	draw_text(64, 16, global.debug1);
+	draw_text(64, 26, global.debug2);
+	draw_text(64, 36, global.debug3);
+	draw_text(64, 46, global.debug4);
+	
+}
+
+
+#endregion

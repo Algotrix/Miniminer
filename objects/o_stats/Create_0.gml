@@ -1,4 +1,4 @@
-global.godmode = false;
+global.godmode = true;
 
 // main Stats
 global.max_hp = 1;
@@ -31,3 +31,6 @@ if(global.godmode)
 	global.mine_level = 0;	
 }
 #endregion
+
+// achievements
+global.achievement_caught_shopkeep = false;

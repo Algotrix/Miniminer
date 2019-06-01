@@ -53,7 +53,16 @@ if(instance_exists(_special))
 	}
 }
 
-if(!_block.is_solid)
+if(_block.is_impassable)
+{
+	state = "idle";
+}
+else if(special_cant_move_up && move_dir == dir_up)
+{
+	state = "moveblocked";
+	player_drain_stamina(global.stamina_drain_moveblocked);
+}
+else if(!_block.is_solid)
 {
 	if(instance_exists(_collectible))
 	{
