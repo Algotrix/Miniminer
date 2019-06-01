@@ -197,7 +197,7 @@ else if(state == "pre_death_got_shiney2")
 	if (pre_death_got_shiney2_wait == 0)
 	{
 		o_player.sprite_index = s_shiny1_green;
-		o_player.special_cant_move_up = true;
+		o_stats.jump_mode = true;
 		textbox_add("Harr Harr Harr!!!", false, 120, false, make_color_rgb(0, 128, 0));
 		textbox_add("I AM RICH $$$", true, 120, false, make_color_rgb(0, 128, 0));
 		textbox_show_ext();

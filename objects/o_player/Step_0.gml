@@ -39,6 +39,21 @@ switch(state)
 		break;
 	case "move":
 		state_move_smooth("idle");
+		
+		if(x_pos == x_pos_new && y_pos == y_pos_new && is_in_jump_area())
+		{
+			var _block_below = get_block(x_pos, y_pos + 1);
+			if(!block_empty(_block_below) && !_block_below.is_solid && !_block_below.can_stand_if_not_solid)
+			{
+				state = "fall";
+			}
+			else if(block_empty(_block_below))
+			{
+				set_pos(pos(x), pos(y));
+				state = "fall";	
+			}
+
+		}
 		break;
 	case "moveblocked":
 		var x_target = apos(x_pos) + ((apos(x_pos_new) - apos(x_pos)) / 4);
@@ -96,11 +111,114 @@ switch(state)
 		{
 			state = "idle";
 		}
+		if(is_in_jump_area() && block_empty(x_pos, y_pos + 1)) state = "fall";
 		break;
-	case "collect":
+	case "jump":
 	{
-		state_move_smooth("idle");
-		var collectible = get_collectible(x_pos_new, y_pos_new);
+	
+		y -= vsp;
+		vsp -= global.grav;	
+				
+		// ceiling
+		if(!block_empty(pos(x), pos(y)))
+		{
+			vsp = 0;
+			//y = apos(y_pos);
+			set_pos(pos(x), pos(y) + 1);
+		}
+		
+		if(o_input.key_right_hold || o_input.key_left_hold)
+		{
+			// key pressed
+			if(abs(vsp) < global.jump_max_speed_for_move)
+			{
+				
+				if(o_input.key_right_hold)
+				{
+					var _next_x_pos = x_pos + 1;
+				}
+				else if(o_input.key_left_hold)
+				{
+					var _next_x_pos = x_pos - 1;
+				}
+				
+				var _next_y_pos = pos_mid(y);
+				
+				if(near(y, apos(_next_y_pos), global.jump_max_distance_for_move))
+				{
+					// near enough to move
+					var _next_block = get_block(_next_x_pos, _next_y_pos);
+					var _next_block_standing = get_block(_next_x_pos, _next_y_pos + 1);
+					if(block_empty(_next_block) || (!_next_block.is_solid && !_next_block.is_impassable))
+					{
+						// next block is free to move
+						
+						if(_next_block_standing.is_solid || _next_block_standing.is_impassable || _next_block_standing.can_stand_if_not_solid)
+						{
+							// you can stand on next block
+							if(o_input.key_right_hold)
+							{
+								look_dir = dir_right;
+								move_dir = dir_right;
+							}
+							else if(o_input.key_left_hold)
+							{
+								look_dir = dir_left;
+								move_dir = dir_left;
+							}
+							x_pos_new = _next_x_pos;
+							y_pos_new = _next_y_pos;
+							state = "jump_move";
+						}
+					}
+				}
+			}
+		}
+		
+		// floor
+		if(!block_empty(pos(x), pos(y) + 1))
+		{
+			vsp = 0;
+			set_pos(pos(x), pos(y));
+			state = "idle";
+		}
 		break;
 	}
+	case "jump_move":
+	{
+		state_move_smooth("idle");
+		break;
+	}
+	case "fall":
+	{
+		
+		// check if on lower border of area, son don't fall
+		var _area_jump = get_area(o_player.x_pos, o_player.y_pos, area_jump);
+		var _area_jump_low_y_pos = pos(_area_jump.y + apos(_area_jump.image_yscale)) - 1;
+		
+		if(y_pos == _area_jump_low_y_pos)
+		{
+			set_pos(pos(x), pos(y));
+			state = "idle";	
+		}
+		else
+		{
+			y -= vsp;
+			vsp -= global.grav;
+		}
+
+		var _block_next = get_block(pos(x), pos(y) + 1);
+				
+		// floor
+		if(_block_next.can_stand_if_not_solid)
+		{
+			vsp = 0;
+			set_pos(pos(x), pos(y));
+			state = "idle";
+		}
+		break;
+	}
+	
 }
+
+global.debug0 = is_in_jump_area();

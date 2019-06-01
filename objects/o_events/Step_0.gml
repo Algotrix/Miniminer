@@ -72,10 +72,11 @@ if(state == "pre_death_mountain_up")
 	
 	if(o_player.y > pre_death_mountain_up_y)
 	{
+		o_player.y = pre_death_mountain_up_y;
 		state = "end";	
 		player_drain_stamina(10);
 		textbox_show("It's too high");
-		pre_death_mountain_up_vsp = 1;
+		pre_death_mountain_up_vsp = 1.2;
 	}
 }
 #endregion

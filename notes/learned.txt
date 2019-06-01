@@ -1,0 +1,3 @@
+30.05:
+- target x, hsp / vsp für jump und movement allgemein
+- einzelne events können direkt in einem eigenen objekt stattfinden (eo_pre_death_show_shopkeep)

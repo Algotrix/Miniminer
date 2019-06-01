@@ -48,11 +48,11 @@ draw_rectangle(60, 6, 60 + stamina_length, 8, false);
 #region debug
 if(global.drawdebug)
 {
-	draw_set_color(c_navy);
-	draw_text(64, 16, global.debug1);
-	draw_text(64, 26, global.debug2);
-	draw_text(64, 36, global.debug3);
-	draw_text(64, 46, global.debug4);
+	draw_set_color(c_black);
+	draw_text(64, 16, global.debug0);
+	draw_text(64, 26, global.debug1);
+	draw_text(64, 36, global.debug2);
+	draw_text(64, 46, global.debug3);
 	
 }
 

@@ -1,4 +1,8 @@
 Died "im 1. Raum tatsächlich gestorben (noch schauen, wie man das genau schafft)
+- nachdem man shiny eingesammelt hat und eine kante runterfällt, bricht man sich das bein
+-- hp balken erscheint, aber man verendet
+-- achievement: man muss vorher schon ein loch gegraben haben in das mein reinfällt (mind 2x vert)
+
 Found item shop
 Got crate
 Dug to the bottom

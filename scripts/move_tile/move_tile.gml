@@ -32,8 +32,8 @@ switch(_action_dir)
 
 // check ob Bewegung 
 var _special = get_special(_x_pos_new, _y_pos_new);
-var _block = get_block(_x_pos_new, _y_pos_new);
-var _collectible = get_collectible(_x_pos_new, _y_pos_new);
+var _next_block = get_block(_x_pos_new, _y_pos_new);
+var _this_block = get_block(x_pos, y_pos);
 
 x_pos_new = _x_pos_new;
 y_pos_new = _y_pos_new;
@@ -53,31 +53,31 @@ if(instance_exists(_special))
 	}
 }
 
-if(_block.is_impassable)
+if(_next_block.is_impassable)
 {
 	state = "idle";
 }
-else if(special_cant_move_up && move_dir == dir_up)
+else if(is_in_jump_area() && move_dir == dir_up && !_this_block.can_stand_if_not_solid)
 {
-	state = "moveblocked";
-	player_drain_stamina(global.stamina_drain_moveblocked);
+	state = "jump";
+	vsp = global.jump_speed;
+	player_drain_stamina(global.stamina_drain_jump);
 }
-else if(!_block.is_solid)
+else if(is_in_jump_area() && move_dir == dir_down &&
+		!_next_block.is_solid && _next_block.can_stand_if_not_solid)
 {
-	if(instance_exists(_collectible))
-	{
-		state = "collect";
-		player_drain_stamina(global.stamina_drain_move);
-	}
-	else
-	{
-		state = "move";
-		player_drain_stamina(global.stamina_drain_move);
-	}
+	state = "move";
+	vsp = global.jump_speed;
+	player_drain_stamina(global.stamina_drain_jump);
+}
+else if(!_next_block.is_solid)
+{
+	state = "move";
+	player_drain_stamina(global.stamina_drain_move);
 }
 else
 {
-	if(global.mine_level < _block.mine_minlevel)
+	if(global.mine_level < _next_block.mine_minlevel)
 	{
 		state = "moveblocked";	
 		player_drain_stamina(global.stamina_drain_moveblocked);
