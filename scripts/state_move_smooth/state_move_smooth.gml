@@ -2,8 +2,8 @@
 ///@arg next_state
 var _next_state = argument0;
 
-x = approach(x, apos(x_pos_new), o_stats.move_spd);
-y = approach(y, apos(y_pos_new), o_stats.move_spd);
+x = approach(x, apos(x_pos_new), global.move_spd);
+y = approach(y, apos(y_pos_new), global.move_spd);
 	
 if(x == apos(x_pos_new) && y == apos(y_pos_new))
 {

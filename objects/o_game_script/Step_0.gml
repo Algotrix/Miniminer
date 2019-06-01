@@ -37,7 +37,7 @@ else if(progress == "start_forreal")
 
 #region pre_death
 var _potions_max = 5;
-var _stamina_percent = o_stats.stamina / o_stats.max_stamina * 100;
+var _stamina_percent = global.stamina / global.max_stamina * 100;
 
 if(progress == "pre_death1")
 {
@@ -89,7 +89,7 @@ else if(progress == "pre_death3")
 			textbox_show("There goes the last one...", "Please don't let me die...");
 			progress = "pre_death4";
 			pre_death_potions_drank += 1;
-			o_stats.stamina = o_stats.max_stamina;
+			global.stamina = global.max_stamina;
 		}
 	}
 
@@ -99,7 +99,7 @@ else if(progress == "pre_death3_wait")
 {
 	progress = "pre_death1";
 	pre_death_potions_drank += 1;
-	o_stats.stamina = o_stats.max_stamina;
+	global.stamina = global.max_stamina;
 }
 else if(progress == "pre_death4")
 {
@@ -173,7 +173,7 @@ else if(progress == "pre_death6_refill")
 {
 	progress = "pre_death6";
 	pre_death_potions_drank += 1;
-	o_stats.stamina = o_stats.max_stamina;
+	global.stamina = global.max_stamina;
 }
 else if(progress == "pre_death6")
 {

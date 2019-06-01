@@ -22,7 +22,7 @@ if(a_event != "" && a_event_delay <= 0)
 #endregion
 
 #region check for global events to selftrigger
-if(o_stats.shinies > 0 && !event_first_shiney_triggered)
+if(global.shinies > 0 && !event_first_shiney_triggered)
 {
 	event_first_shiney_triggered = true;	
 	textbox_show("Wow! A Shiney!", "This must be worth a Marillion!");

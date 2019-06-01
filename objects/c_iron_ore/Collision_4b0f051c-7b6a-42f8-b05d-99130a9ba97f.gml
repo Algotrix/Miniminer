@@ -3,5 +3,5 @@
 // Inherit the parent event
 event_inherited();
 
-o_stats.iron_ore += 1;
+global.iron_ore += 1;
 killme();

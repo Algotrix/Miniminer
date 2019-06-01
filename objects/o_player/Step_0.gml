@@ -43,8 +43,8 @@ switch(state)
 	case "moveblocked":
 		var x_target = apos(x_pos) + ((apos(x_pos_new) - apos(x_pos)) / 4);
 		var y_target = apos(y_pos) + ((apos(y_pos_new) - apos(y_pos)) / 4);
-		x = approach(x, x_target, o_stats.move_spd);
-		y = approach(y, y_target, o_stats.move_spd);
+		x = approach(x, x_target, global.move_spd);
+		y = approach(y, y_target, global.move_spd);
 	
 		if(x == x_target && y == y_target)
 		{
@@ -54,8 +54,8 @@ switch(state)
 		}
 		break;
 	case "moveblocked_back":
-		x = approach(x, apos(x_pos), o_stats.move_spd);
-		y = approach(y, apos(y_pos), o_stats.move_spd);
+		x = approach(x, apos(x_pos), global.move_spd);
+		y = approach(y, apos(y_pos), global.move_spd);
 	
 		if(x == apos(x_pos) && y == apos(y_pos))
 		{
@@ -65,8 +65,8 @@ switch(state)
 	case "mine":
 		var x_target = apos(x_pos) + ((apos(x_pos_new) - apos(x_pos)) / 4);
 		var y_target = apos(y_pos) + ((apos(y_pos_new) - apos(y_pos)) / 4);
-		x = approach(x, x_target, o_stats.mine_spd);
-		y = approach(y, y_target, o_stats.mine_spd);
+		x = approach(x, x_target, global.mine_spd);
+		y = approach(y, y_target, global.mine_spd);
 		
 		// set sprite for orientation
 		if(look_dir == dir_right)
@@ -81,7 +81,7 @@ switch(state)
 		if(x == x_target && y == y_target)
 		{
 			var _block = get_block(x_pos_new, y_pos_new);
-			block_apply_damage(_block, o_stats.mine_dmg, reverse_dir(last_action_dir));
+			block_apply_damage(_block, global.mine_dmg, reverse_dir(last_action_dir));
 						
 			x_pos_new = x_pos;
 			y_pos_new = y_pos;
@@ -89,8 +89,8 @@ switch(state)
 		}
 		break;
 	case "mine_moveback":
-		x = approach(x, apos(x_pos), o_stats.mine_spd);
-		y = approach(y, apos(y_pos), o_stats.mine_spd);
+		x = approach(x, apos(x_pos), global.mine_spd);
+		y = approach(y, apos(y_pos), global.mine_spd);
 	
 		if(x == apos(x_pos) && y == apos(y_pos))
 		{
