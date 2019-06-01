@@ -143,6 +143,14 @@
             }
         },
         {
+            "Key": "1df6f785-39d5-4bb3-a983-14bb5befb18d",
+            "Value": {
+                "id": "b86d1176-00c3-4885-8543-f7bcebc8cc71",
+                "resourcePath": "views\\1df6f785-39d5-4bb3-a983-14bb5befb18d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "1eb48f24-bcc5-43f7-9402-3a2b598375c3",
             "Value": {
                 "id": "e31ec34a-b5cf-460e-aa3e-40a36aba80ef",
@@ -423,11 +431,27 @@
             }
         },
         {
+            "Key": "6013ab87-18cf-46cf-919a-89619a8da31a",
+            "Value": {
+                "id": "4f39794a-a823-4ac9-9249-a3efac62c34b",
+                "resourcePath": "sprites\\s_stone_back\\s_stone_back.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6321c0f5-5085-4ba0-a4e4-e544ffc49b66",
             "Value": {
                 "id": "576c5873-e7a7-40ec-82e7-1890f158038c",
                 "resourcePath": "objects\\o_blockspawner\\o_blockspawner.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "6376f141-65f7-497e-97c0-d1c2f62f9e14",
+            "Value": {
+                "id": "cb7afaa3-451b-4cda-a8e7-288815cf426f",
+                "resourcePath": "scripts\\state_check_fall\\state_check_fall.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -524,6 +548,14 @@
                 "id": "a5b7d23d-8700-471b-8fe4-cc769d15ee48",
                 "resourcePath": "views\\6cac5b3f-8120-40ce-8799-be0fbfc6e03d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "6e0b6fbe-fad7-47b1-9694-40a98c10975f",
+            "Value": {
+                "id": "f26b55ee-19cc-49e8-9d45-43c383cba8b7",
+                "resourcePath": "objects\\b_box_achievement_boxxy\\b_box_achievement_boxxy.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -783,6 +815,14 @@
             }
         },
         {
+            "Key": "a21944bf-95e2-4d33-a84a-00551235964a",
+            "Value": {
+                "id": "7ea62fc6-f418-4eed-859e-241edc0f54f3",
+                "resourcePath": "sprites\\s_player_legs_broken\\s_player_legs_broken.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a4593ede-4982-41d6-aec3-967c61de4968",
             "Value": {
                 "id": "fce85ece-7b60-43f8-b480-d7d38731f192",
@@ -812,6 +852,14 @@
                 "id": "be9d2c3c-445b-4fc5-9d8d-81bad566afdb",
                 "resourcePath": "views\\a65537e4-9203-4e9d-846c-be0f939848e0.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a6883cb1-d82d-4718-8c27-8c17e9fe9551",
+            "Value": {
+                "id": "1b0e838c-b448-4472-9b55-1d6301a117d8",
+                "resourcePath": "objects\\b_stone_back\\b_stone_back.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1063,6 +1111,14 @@
             }
         },
         {
+            "Key": "df64a676-97e0-45f7-9e3b-49c680156e42",
+            "Value": {
+                "id": "3321282e-7c67-48fa-ac1e-079af93f215e",
+                "resourcePath": "objects\\bb_fake_block\\bb_fake_block.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "e0487a44-bdc4-4085-b3fb-28323c7921aa",
             "Value": {
                 "id": "6211658a-ef27-454f-a069-899c303975e6",
@@ -1140,6 +1196,14 @@
                 "id": "78d0d98a-4870-4f4a-a653-8768a5c40a6a",
                 "resourcePath": "sprites\\sprite18\\sprite18.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f1244273-abb9-4211-a55f-b0c02f1188f1",
+            "Value": {
+                "id": "ff744336-4da7-4b73-a58d-2134e8005e1a",
+                "resourcePath": "objects\\b_fake_stone\\b_fake_stone.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -1246,6 +1310,7 @@
         "4ae261e7-0046-468e-b58e-9c98ee90ddea",
         "27fbb5f7-87e0-49cf-a194-559c84cd0d87",
         "6986d874-a3b7-466b-b873-50d5bc676d07",
+        "6376f141-65f7-497e-97c0-d1c2f62f9e14",
         "7b19e3ae-b270-426e-8538-1d125adf71f7",
         "5186ea92-773f-4039-ae80-e04441827ba2",
         "1de8414c-0eba-4a0a-afce-ec96fe36c5e5",

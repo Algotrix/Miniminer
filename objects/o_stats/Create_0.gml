@@ -40,4 +40,8 @@ if(global.godmode)
 #endregion
 
 // achievements
-global.achievement_caught_shopkeep = false;
+global.achievement_caught_shopkeep = false; // when he comes down, approach him from below
+global.achievement_unlimited_potions = false; // let me run out of stamina enough times
+global.achievment_shattered = false; // as shiny fall 5 tiles
+global.achievment_boxxy = false; // got the box
+global.achievment_broken = false; // after falling down, complete the game with broken legs

@@ -53,12 +53,37 @@ if(instance_exists(_special))
 	}
 }
 
+if(move_crippled)
+{
+	if(move_dir == dir_right || move_dir == dir_left) 
+	{
+		if(move_dir == dir_right) 
+		{
+			var _crippled_next_block = get_block(pos(x + 8), pos(y));
+		}
+		else if(move_dir == dir_left) 
+		{
+			var _crippled_next_block = get_block(pos(x - 1), pos(y));
+		}
+		
+		if(!_crippled_next_block.is_solid) state = "move_crippled";
+	}
+	else
+	{
+		state = "idle";	
+	}
+	exit;
+}
+
+
 if(_next_block.is_impassable)
 {
+	// do nothing - block completely unpassable
 	state = "idle";
 }
 else if(is_in_jump_area() && move_dir == dir_up && !_this_block.can_stand_if_not_solid)
 {
+	// jump
 	state = "jump";
 	vsp = global.jump_speed;
 	player_drain_stamina(global.stamina_drain_jump);
@@ -66,12 +91,14 @@ else if(is_in_jump_area() && move_dir == dir_up && !_this_block.can_stand_if_not
 else if(is_in_jump_area() && move_dir == dir_down &&
 		!_next_block.is_solid && _next_block.can_stand_if_not_solid)
 {
+	// drop down platforms
 	state = "move";
 	vsp = global.jump_speed;
 	player_drain_stamina(global.stamina_drain_jump);
 }
 else if(!_next_block.is_solid)
 {
+	// default move
 	state = "move";
 	player_drain_stamina(global.stamina_drain_move);
 }
@@ -88,3 +115,4 @@ else
 		player_drain_stamina(global.stamina_drain_mine);
 	}
 }
+

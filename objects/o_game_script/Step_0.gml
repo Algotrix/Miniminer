@@ -174,6 +174,8 @@ else if(state == "pre_death6_refill")
 	state = "pre_death6";
 	pre_death_potions_drank += 1;
 	global.stamina = global.max_stamina;
+	
+	global.achievement_unlimited_potions = true;
 }
 else if(state == "pre_death6")
 {
@@ -187,7 +189,7 @@ else if(state == "pre_death6")
 
 if(state == "pre_death_got_shiney")
 {	
-	textbox_show("Wow! A Shiney!", "This must be worth a Marillion!", "And it's MINE!", "Its....... M I N E");
+	textbox_show("Wow! A Shiney!", "This must be worth a Marillion!", "And it's MINE!", "Its...... .... M I N E");
 	
 	state = "pre_death_got_shiney2";
 }
@@ -197,7 +199,8 @@ else if(state == "pre_death_got_shiney2")
 	if (pre_death_got_shiney2_wait == 0)
 	{
 		o_player.sprite_index = s_shiny1_green;
-		o_stats.jump_mode = true;
+		_area = get_area(2, 5, area_jump);
+		_area.image_yscale = room_height;
 		textbox_add("Harr Harr Harr!!!", false, 120, false, make_color_rgb(0, 128, 0));
 		textbox_add("I AM RICH $$$", true, 120, false, make_color_rgb(0, 128, 0));
 		textbox_show_ext();
@@ -221,7 +224,6 @@ else if(state == "pre_death_got_shiney3")
 		textbox_show_ext();
 		pre_death_got_shiney3_jumped += 1;
 		pre_death_got_shiney3_jumped_wait = _wait;
-		state = "pre_death_got_shiney4";
 	}
 	else if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped = 5)
 	{
@@ -229,13 +231,31 @@ else if(state == "pre_death_got_shiney3")
 		textbox_show_ext();
 		pre_death_got_shiney3_jumped += 1;
 		pre_death_got_shiney3_jumped_wait = _wait;
-		state = "pre_death_got_shiney4";
 	}
 	
+	// player falls down as shiney - min 5 blocks
+	if(o_player.vsp == 0 && pre_death_got_shiney4_last_vsp < -(global.grav * 25))
+	{
+		/// HARR HARR HARR
+		state = "pre_death_got_shiney_shatter";
+		global.debug3 = "SMASH!";
+		global.achievment_shattered = true;
+	}
+	if(global.stamina <= 0)
+	{
+		state = "pre_death_got_shiney_die";
+		global.debug3 = "Die (sta)";
+
+	}
 	
+	pre_death_got_shiney4_last_vsp = o_player.vsp;
 }
-else if(state == "pre_death_got_shiney4")
+else if(state == "pre_death_got_shiney_die")
 {
-	
+
+}
+else if(state == "pre_death_got_shiney_shatter")
+{
+
 }
 

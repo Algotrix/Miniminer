@@ -37,23 +37,12 @@ switch(state)
 		// look what's up in the next block!
 		move_tile(move_dir);
 		break;
+		
+	#region move
 	case "move":
 		state_move_smooth("idle");
-		
-		if(x_pos == x_pos_new && y_pos == y_pos_new && is_in_jump_area())
-		{
-			var _block_below = get_block(x_pos, y_pos + 1);
-			if(!block_empty(_block_below) && !_block_below.is_solid && !_block_below.can_stand_if_not_solid)
-			{
-				state = "fall";
-			}
-			else if(block_empty(_block_below))
-			{
-				set_pos(pos(x), pos(y));
-				state = "fall";	
-			}
+		state_check_fall();
 
-		}
 		break;
 	case "moveblocked":
 		var x_target = apos(x_pos) + ((apos(x_pos_new) - apos(x_pos)) / 4);
@@ -77,6 +66,9 @@ switch(state)
 			state = "idle";
 		}
 		break;
+	#endregion
+		
+	#region mine
 	case "mine":
 		var x_target = apos(x_pos) + ((apos(x_pos_new) - apos(x_pos)) / 4);
 		var y_target = apos(y_pos) + ((apos(y_pos_new) - apos(y_pos)) / 4);
@@ -113,9 +105,11 @@ switch(state)
 		}
 		if(is_in_jump_area() && block_empty(x_pos, y_pos + 1)) state = "fall";
 		break;
+	#endregion
+		
+	#region jump
 	case "jump":
 	{
-	
 		y -= vsp;
 		vsp -= global.grav;	
 				
@@ -188,7 +182,11 @@ switch(state)
 	{
 		state_move_smooth("idle");
 		break;
+		
 	}
+	#endregion
+	
+	#region fall
 	case "fall":
 	{
 		
@@ -218,7 +216,28 @@ switch(state)
 		}
 		break;
 	}
+	#endregion
 	
+	case "move_crippled":
+	if(move_crippled_x_new == -1)
+	{
+		if(last_action_dir == dir_right) move_crippled_x_new = x + 1;
+		if(last_action_dir == dir_left) move_crippled_x_new = x - 1;
+	}
+	x = approach(x, move_crippled_x_new, global.move_spd);
+
+	if(x == move_crippled_x_new)
+	{
+		state = "idle";	
+		move_crippled_x_new = -1;
+	}
+	
+	if(x mod 8 == 0)
+	{
+		set_pos(pos(x), pos(y));
+		state_check_fall();
+	}
+	break;
 }
 
 global.debug0 = is_in_jump_area();

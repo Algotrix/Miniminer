@@ -63,21 +63,8 @@ if(state == "pre_death_go_left")
 #region pre_death_mountain_up
 if(state == "pre_death_mountain_up")
 {
-	if(pre_death_mountain_up_y == -1)
-	{
-		pre_death_mountain_up_y	= o_player.y;
-	}
-	pre_death_mountain_up_vsp -= 0.1;
-	o_player.y -= pre_death_mountain_up_vsp;
-	
-	if(o_player.y > pre_death_mountain_up_y)
-	{
-		o_player.y = pre_death_mountain_up_y;
-		state = "end";	
-		player_drain_stamina(10);
-		textbox_show("It's too high");
-		pre_death_mountain_up_vsp = 1.2;
-	}
+	state = "end";	
+	textbox_show("It's too high");
 }
 #endregion
 
@@ -89,6 +76,11 @@ if(state == "pre_death_show_shopkeep")
 }
 #endregion
 
+if(state == "pre_death_legs_broken")
+{
+	o_player.sprite_index = s_player_legs_broken;
+	o_player.move_crippled = true;
+}
 
 
 #region end
