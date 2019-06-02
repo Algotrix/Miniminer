@@ -246,9 +246,9 @@ switch(state)
 	break;
 }
 
-//global.debug0 = global.achievement_caught_shopkeep; // when he comes down, approach him from below
-//global.debug1 = global.achievement_unlimited_potions; // let me run out of stamina enough times
-//global.debug2 = global.achievment_shattered; // as shiny fall 5 tiles
-//global.debug3 = global.achievment_boxxy; // got the box
-//global.debug4 = global.achievment_broken; // after falling down, complete the game with broken legs
-global.debug0 = global.hp;
+global.debug0 = global.achievement_caught_shopkeep; // when he comes down, approach him from below
+global.debug1 = global.achievement_unlimited_potions; // let me run out of stamina enough times
+global.debug2 = global.achievement_shattered; // as shiny fall 5 tiles
+global.debug3 = global.achievement_boxxy; // got the box
+global.debug4 = global.achievement_broken; // after falling down, complete the game with broken legs
+global.debug5 = global.hp;

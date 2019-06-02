@@ -286,29 +286,31 @@ else if(state == "pre_death_got_shiney3")
 	if(o_player.vsp == 0 && pre_death_got_shiney3_last_vsp < -(global.grav * 25))
 	{
 		state = "pre_death_got_shiney_shatter";
-		global.debug3 = "SMASH!";
-		global.achievment_shattered = true;
+		global.achievement_shattered = true;
+		if(instance_exists(eo_move_crippled))
+		{
+			global.achievement_broken = true;	
+		}
 	}
 	if(global.stamina <= 0)
 	{
 		state = "pre_death_got_shiney_die";
-		global.debug3 = "Die (sta)";
+	}
+	if(global.hp <= 0)
+	{
+		state = "pre_death_got_shiney_die";
 	}
 	pre_death_got_shiney3_last_vsp = o_player.vsp;
 }
-else if(state == "die")
+else if(state == "pre_death_got_shiney_die")
 {
-	textbox_show("end: got_shiney_die");
+	textbox_show("end: die");
 	state = "end";
 }
-else if(state == "shatter")
+else if(state == "pre_death_got_shiney_shatter")
 {
-	global.achievment_shattered = true;
-	if(o_player.event_move_crippled)
-	{
-		global.achievment_broken = true;	
-	}
-	textbox_show("end: pre_death_got_shiney_shatter");
+
+	textbox_show("end:  shatter");
 	state = "end";
 }
 #endregion

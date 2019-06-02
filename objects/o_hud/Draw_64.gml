@@ -48,6 +48,7 @@ draw_rectangle(60, 6, 60 + stamina_length, 8, false);
 #region health bar
 if(global.hud_show_healthbar)
 {
+	if(hp_length == -1) hp_length = 62 / global.max_hp * global.hp;
 	hp_length = max(lerp(hp_length, 62 / global.max_hp * global.hp, 0.06), 0);
 	var _hp_col_full = rgb("AA0000");
 	var _hp_col_empty = rgb("440000");

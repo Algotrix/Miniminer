@@ -4,4 +4,4 @@ var view_height = camera_get_view_height(camera_id);
 display_set_gui_size(view_width, view_height);
 
 stamina_length = 0;
-hp_length = global.hp;
+hp_length = -1;

@@ -1,4 +1,3 @@
-/// @description Init Transition
 delta = 0;
 duration = room_speed * 12;
 delay = room_speed;

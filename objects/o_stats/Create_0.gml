@@ -2,7 +2,7 @@ global.godmode = true;
 global.drawdebug = true;
 
 // main Stats
-global.max_hp = 100;
+global.max_hp = 3;
 global.max_stamina = 100;
 
 global.move_spd = 0.2;
@@ -45,6 +45,6 @@ if(global.godmode)
 // achievements
 global.achievement_caught_shopkeep = false; // when he comes down, approach him from below
 global.achievement_unlimited_potions = false; // let me run out of stamina enough times
-global.achievment_shattered = false; // as shiny fall 5 tiles
-global.achievment_boxxy = false; // got the box
-global.achievment_broken = false; // after falling down, complete the game with broken legs
+global.achievement_shattered = false; // as shiny fall 5 tiles
+global.achievement_boxxy = false; // got the box
+global.achievement_broken = false; // after falling down, complete the game with broken legs

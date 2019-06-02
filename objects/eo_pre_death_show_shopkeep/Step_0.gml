@@ -19,7 +19,6 @@ if(state == "start")
 	}
 	if(o_player.y_pos < player_y_pos_retreat && x == apos(x_pos_start) && y == apos(y_pos_start))
 	{
-		global.debug3 = "killed";
 		killme();
 	}
 }
