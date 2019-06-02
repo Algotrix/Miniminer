@@ -53,7 +53,7 @@ if(instance_exists(_special))
 	}
 }
 
-if(move_crippled)
+if(event_move_crippled)
 {
 	if(move_dir == dir_right || move_dir == dir_left) 
 	{
@@ -66,7 +66,7 @@ if(move_crippled)
 			var _crippled_next_block = get_block(pos(x - 1), pos(y));
 		}
 		
-		if(!_crippled_next_block.is_solid) state = "move_crippled";
+		if(!_crippled_next_block.is_solid) state = "event_move_crippled";
 	}
 	else
 	{

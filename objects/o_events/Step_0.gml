@@ -68,7 +68,7 @@ if(state == "pre_death_mountain_up")
 }
 #endregion
 
-#region pre_death_show_shopkeep
+#region event instance spawner
 if(state == "pre_death_show_shopkeep")
 {
 	instance_create_layer(apos(1), apos(7), layer_game, eo_pre_death_show_shopkeep);
@@ -76,14 +76,14 @@ if(state == "pre_death_show_shopkeep")
 }
 #endregion
 
-if(state == "pre_death_legs_broken")
+if(state == "event_move_crippled")
 {
-	o_player.sprite_index = s_player_legs_broken;
-	o_player.move_crippled = true;
+	instance_create_layer(-1, -1, layer_game, eo_move_crippled);
+	state = "end";
 }
-
-
 #region end
+
+
 if(state == "end")
 {
 	eventarg0 = "";

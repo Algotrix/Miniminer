@@ -5,6 +5,8 @@ switch(state)
 {
 	case "idle" :
 		// check inputs and assign next movement
+		if(!global.can_move) break;
+		
 		if(input.key_up)
 		{
 			move_dir = dir_up;
@@ -194,7 +196,7 @@ switch(state)
 		var _area_jump = get_area(o_player.x_pos, o_player.y_pos, area_jump);
 		var _area_jump_low_y_pos = pos(_area_jump.y + apos(_area_jump.image_yscale)) - 1;
 		
-		if(y_pos == _area_jump_low_y_pos)
+		if(y_pos == _area_jump_low_y_pos && !event_move_crippled)
 		{
 			set_pos(pos(x), pos(y));
 			state = "idle";	
@@ -218,26 +220,35 @@ switch(state)
 	}
 	#endregion
 	
-	case "move_crippled":
-	if(move_crippled_x_new == -1)
+	case "event_move_crippled":
+	if(event_move_crippled_x_new == -1)
 	{
-		if(last_action_dir == dir_right) move_crippled_x_new = x + 1;
-		if(last_action_dir == dir_left) move_crippled_x_new = x - 1;
+		if(last_action_dir == dir_right) event_move_crippled_x_new = x + 1;
+		if(last_action_dir == dir_left) event_move_crippled_x_new = x - 1;
 	}
-	x = approach(x, move_crippled_x_new, global.move_spd);
+	x = approach(x, event_move_crippled_x_new, global.move_spd);
 
-	if(x == move_crippled_x_new)
+	if(x == event_move_crippled_x_new)
 	{
 		state = "idle";	
-		move_crippled_x_new = -1;
+		event_move_crippled_x_new = -1;
+		
 	}
 	
 	if(x mod 8 == 0)
 	{
-		set_pos(pos(x), pos(y));
+		set_pos(pos_mid(x), pos_mid(y));
+
+		x_pos_new = x_pos;
+		y_pos_new = y_pos;
 		state_check_fall();
 	}
 	break;
 }
 
-global.debug0 = is_in_jump_area();
+//global.debug0 = global.achievement_caught_shopkeep; // when he comes down, approach him from below
+//global.debug1 = global.achievement_unlimited_potions; // let me run out of stamina enough times
+//global.debug2 = global.achievment_shattered; // as shiny fall 5 tiles
+//global.debug3 = global.achievment_boxxy; // got the box
+//global.debug4 = global.achievment_broken; // after falling down, complete the game with broken legs
+global.debug0 = global.hp;

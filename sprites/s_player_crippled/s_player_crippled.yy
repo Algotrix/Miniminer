@@ -2,7 +2,7 @@
     "id": "a21944bf-95e2-4d33-a84a-00551235964a",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "s_player_legs_broken",
+    "name": "s_player_crippled",
     "For3D": false,
     "HTile": false,
     "VTile": false,

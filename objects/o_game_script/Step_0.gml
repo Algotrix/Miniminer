@@ -187,9 +187,12 @@ else if(state == "pre_death6")
 }
 #endregion
 
+#region pre_death_got_shiney
+
 if(state == "pre_death_got_shiney")
 {	
-	textbox_show("Wow! A Shiney!", "This must be worth a Marillion!", "And it's MINE!", "Its...... .... M I N E");
+	global.can_move = false;
+	textbox_show("Wow! A Shiney!", "This must be worth a Marillion!", "And it's MINE!", "Its......  M_I_N_E");
 	
 	state = "pre_death_got_shiney2";
 }
@@ -205,38 +208,83 @@ else if(state == "pre_death_got_shiney2")
 		textbox_add("I AM RICH $$$", true, 120, false, make_color_rgb(0, 128, 0));
 		textbox_show_ext();
 		state = "pre_death_got_shiney3";
+		global.can_move = true;
 	}
-	
-	
 }
 else if(state == "pre_death_got_shiney3")
 {	
 	var _wait = 30;
+	var _event_move_crippled = instance_exists(eo_move_crippled);
 	pre_death_got_shiney3_jumped_wait -= 1;
-	if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped < 3)
+	
+	#region jump messages when not crippled
+	if(!_event_move_crippled)
 	{
-		pre_death_got_shiney3_jumped += 1;
-		pre_death_got_shiney3_jumped_wait = _wait;
+		if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped < 3)
+		{
+			pre_death_got_shiney3_jumped += 1;
+			pre_death_got_shiney3_jumped_wait = _wait;
+		}
+		else if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped = 3)
+		{
+			textbox_add("What! I'm too heavy!!", false, 120, false, make_color_rgb(0, 128, 0));
+			textbox_show_ext();
+			pre_death_got_shiney3_jumped += 1;
+			pre_death_got_shiney3_jumped_wait = _wait;
+		}
+		else if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped = 5)
+		{
+			textbox_add("No No No!! I won't drop the Shiney!", false, 120, false, make_color_rgb(0, 128, 0));
+			textbox_show_ext();
+			pre_death_got_shiney3_jumped += 1;
+			pre_death_got_shiney3_jumped_wait = _wait;
+		}
 	}
-	else if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped = 3)
+	#endregion
+	
+		
+	#region walk messages when not crippled
+	if(_event_move_crippled)
 	{
-		textbox_add("What! I'm too heavy!!", false, 120, false, make_color_rgb(0, 128, 0));
-		textbox_show_ext();
-		pre_death_got_shiney3_jumped += 1;
-		pre_death_got_shiney3_jumped_wait = _wait;
+		if(o_input.key_left || o_input.key_right && pre_death_got_shiney3_jumped_wait < 0) 
+		{
+			pre_death_got_shiney3_jumped += 1;
+			pre_death_got_shiney3_jumped_wait = _wait;
+			
+			if(pre_death_got_shiney3_jumped == 10)
+			{
+				textbox_add("At least i have my shiney...", false, 120, false, make_color_rgb(0, 128, 0));
+				textbox_add("my one and only...", false, 120, false, make_color_rgb(0, 128, 0));
+				textbox_show_ext();
+			}
+			else if(pre_death_got_shiney3_jumped == 20)
+			{
+				textbox_add("I will keep my shiney until i die!", false, 120, false, make_color_rgb(0, 128, 0));
+				textbox_show_ext();
+			}
+			else if(pre_death_got_shiney3_jumped == 30)
+			{
+				textbox_add("-- UNTIL --", false, 120, false, make_color_rgb(0, 128, 0));
+				textbox_show_ext();
+			}
+			else if(pre_death_got_shiney3_jumped == 40)
+			{
+				textbox_add("---- I ----", false, 120, false, make_color_rgb(0, 128, 0));
+				textbox_show_ext();
+			}
+			else if(pre_death_got_shiney3_jumped == 50)
+			{
+				textbox_add("--- DIE ---", false, 120, false, make_color_rgb(0, 128, 0));
+				textbox_show_ext();
+			}
+		}
 	}
-	else if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0 && pre_death_got_shiney3_jumped = 5)
-	{
-		textbox_add("No No No!! I won't drop the Shiney!", false, 120, false, make_color_rgb(0, 128, 0));
-		textbox_show_ext();
-		pre_death_got_shiney3_jumped += 1;
-		pre_death_got_shiney3_jumped_wait = _wait;
-	}
+	#endregion
+	
 	
 	// player falls down as shiney - min 5 blocks
-	if(o_player.vsp == 0 && pre_death_got_shiney4_last_vsp < -(global.grav * 25))
+	if(o_player.vsp == 0 && pre_death_got_shiney3_last_vsp < -(global.grav * 25))
 	{
-		/// HARR HARR HARR
 		state = "pre_death_got_shiney_shatter";
 		global.debug3 = "SMASH!";
 		global.achievment_shattered = true;
@@ -245,17 +293,24 @@ else if(state == "pre_death_got_shiney3")
 	{
 		state = "pre_death_got_shiney_die";
 		global.debug3 = "Die (sta)";
-
 	}
-	
-	pre_death_got_shiney4_last_vsp = o_player.vsp;
+	pre_death_got_shiney3_last_vsp = o_player.vsp;
 }
-else if(state == "pre_death_got_shiney_die")
+else if(state == "die")
 {
-
+	textbox_show("end: got_shiney_die");
+	state = "end";
 }
-else if(state == "pre_death_got_shiney_shatter")
+else if(state == "shatter")
 {
-
+	global.achievment_shattered = true;
+	if(o_player.event_move_crippled)
+	{
+		global.achievment_broken = true;	
+	}
+	textbox_show("end: pre_death_got_shiney_shatter");
+	state = "end";
 }
+#endregion
 
+global.debug3 = pre_death_got_shiney3_jumped;

@@ -16,8 +16,8 @@ look_dir = dir_right;
 
 // actions
 a_drain_stamina = 0;
-a_recieve_damage = 0; 
+a_apply_damage = 0; 
 
 // internal states
-move_crippled = false;
-move_crippled_x_new = -1;
+event_move_crippled = false;
+event_move_crippled_x_new = -1;

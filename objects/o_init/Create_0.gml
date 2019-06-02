@@ -1,3 +1,5 @@
+test = map_range(23, 87, 75, 500, 1000);
+
 #macro dir_none -1
 #macro dir_up 0
 #macro dir_right 1
@@ -19,10 +21,13 @@
 
 global.is_in_dialogue = false;
 global.halted = false;
+global.can_move = true;
 
-global.debug0 = "-";
-global.debug1 = "-";
-global.debug2 = "-";
-global.debug3 = "-";
+global.debug0 = "";
+global.debug1 = "";
+global.debug2 = "";
+global.debug3 = "";
+global.debug4 = "";
+global.debug5 = "";
 
 room_goto_next();

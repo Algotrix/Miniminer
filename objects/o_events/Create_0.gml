@@ -16,9 +16,9 @@ eventarg2 = a_eventarg2;
 
 // event states
 pre_death_go_left_count = 0;
-pre_death_mountain_up_y = -1;
-pre_death_mountain_up_vsp = 1.2;
 pre_death_got_shiney_triggered = false;
-pre_death_show_shopkeep_pos = 0;
 
+event_move_crippled_fall_length = 30;
+event_move_crippled_show_text_wait = 120;
+event_move_crippled_last_vsp = 0;
 // global event states

@@ -1,3 +1,8 @@
 30.05:
 - target x, hsp / vsp für jump und movement allgemein
 - einzelne events können direkt in einem eigenen objekt stattfinden (eo_pre_death_show_shopkeep)
+
+01.06:
+- wait durch setzen von wait = 60 im create und dann im step wait -= 1 / if(wait == 0)
+- funktionen debuggen: einfach in o_init direkt in der 1. Zeile aufrufen und im debugger starten.
+- einzelne events immer in eigene objewkte auslagern! sehr geil! :D

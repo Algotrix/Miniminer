@@ -1,8 +1,8 @@
-global.godmode = false;
+global.godmode = true;
 global.drawdebug = true;
 
 // main Stats
-global.max_hp = 1;
+global.max_hp = 100;
 global.max_stamina = 100;
 
 global.move_spd = 0.2;
@@ -27,6 +27,9 @@ global.stamina = global.max_stamina;
 // resources
 global.shinies = 0;
 global.iron_ore = 0;
+
+// hud
+global.hud_show_healthbar = false;
 
 
 #region godmode
