@@ -67,6 +67,9 @@ if(event_move_crippled)
 		}
 		
 		if(!_crippled_next_block.is_solid) state = "event_move_crippled";
+		
+		player_drain_stamina(global.stamina_drain_move);
+		
 	}
 	else
 	{

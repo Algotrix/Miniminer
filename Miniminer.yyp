@@ -1055,6 +1055,14 @@
             }
         },
         {
+            "Key": "c38952e5-3dcd-409d-acd8-ad5665538928",
+            "Value": {
+                "id": "97c9d9d0-6659-458f-9182-ff278004a707",
+                "resourcePath": "sprites\\s_shiny1_green_shattered\\s_shiny1_green_shattered.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c45c364e-aa4f-48f4-9789-be8ccf17c3ab",
             "Value": {
                 "id": "0c4969f2-c497-4b06-bea4-fe65094c6a28",

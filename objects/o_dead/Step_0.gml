@@ -1,5 +1,6 @@
 if(o_fadeout.fadeout_done)
 {
+	o_hud_you_died.die_text = die_text;
 	o_hud_you_died.sub_text = sub_text;
 	if(o_input.key_action)
 	{

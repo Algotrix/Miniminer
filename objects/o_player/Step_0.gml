@@ -232,7 +232,6 @@ switch(state)
 	{
 		state = "idle";	
 		event_move_crippled_x_new = -1;
-		
 	}
 	
 	if(x mod 8 == 0)

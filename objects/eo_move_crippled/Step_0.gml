@@ -55,35 +55,41 @@ else if(state == "event_move_crippled_check_damage")
 	var _dmg = 0;
 	if(o_player.vsp == 0 && o_player.vsp != event_move_crippled_last_vsp && event_move_crippled_last_vsp >= 1.5)
 	{
+		_dmg = 100;
 		textbox_add("Aaaaaaaaaaaaaaaaa", true, 30, false, make_color_rgb(33,00,00), make_color_rgb(160,00,00), c_red);
 		textbox_show_ext();
-		_dmg = 100;
 	}
 	if(o_player.vsp == 0 && o_player.vsp != event_move_crippled_last_vsp && event_move_crippled_last_vsp < -1.5)
 	{
-		textbox_add("Aaaaaaaaa! The pain!!!", true, 30, false, make_color_rgb(33,00,00), make_color_rgb(160,00,00), c_red);
-		textbox_show_ext();
 		_dmg = 9;
+		if(global.hp - _dmg > 0)
+		{
+			textbox_add("Aaaaaaaaa! The pain!!!", true, 30, false, make_color_rgb(33,00,00), make_color_rgb(160,00,00), c_red);
+			textbox_show_ext();
+		}
 	}
 	else if(o_player.vsp == 0 && o_player.vsp != event_move_crippled_last_vsp && event_move_crippled_last_vsp < -1)
 	{
-		textbox_add("Ouch!!", true, 30, false, make_color_rgb(33,00,00), make_color_rgb(160,00,00), c_white);
-		textbox_show_ext();
-
 		_dmg = 4;
+		if(global.hp - _dmg > 0)
+		{
+			textbox_add("Ouch!!", true, 30, false, make_color_rgb(33,00,00), make_color_rgb(160,00,00), c_white);
+			textbox_show_ext();
+		}
 	}
 	
-	if(global.hp - _dmg <= 0)
+	if(global.hp - _dmg <= 0 && !global.pre_death_got_shiney)
 	{
 		// not normal death
+		global.hp = max(global.hp - _dmg, 1);
 		var _dead = instance_create_layer(-1, -1, layer_game, o_dead);
 		_dead.sub_text = "This time for real";
 	}
 	else
 	{
-		player_apply_damage(_dmg);
+		player_apply_damage(_dmg);	
 	}
-
+	
 	event_move_crippled_last_vsp = o_player.vsp;
 }
 else if(state == "end")

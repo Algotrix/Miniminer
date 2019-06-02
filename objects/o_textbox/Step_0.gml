@@ -3,11 +3,15 @@ if(state == "show")
 	var _a_show_continue_wait = ds_list_find_value(a_show_continue_wait, show_line);
 	var _a_show_continue_wait_skippable = ds_list_find_value(a_show_continue_wait_skippable, show_line);
 	
+	if(global.debug_quickmode) continue_delay_counter = 0;
+	
 	if(!counter_init)
 	{
 		continue_delay_counter = _a_show_continue_wait;
 		counter_init = true;
 	}
+	
+	// wenn's hier crasht, wird textbox_show_ext aufgerufen obwohl keine textbox_add gemacht wurden.
 	
 	continue_delay_counter = max(0, continue_delay_counter - 1);
 	

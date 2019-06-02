@@ -1,16 +1,16 @@
 global.godmode = true;
+global.debug_quickmode = true;
 global.drawdebug = true;
 
 // main Stats
-global.max_hp = 3;
-global.max_stamina = 100;
+global.max_hp = 100;
+global.max_stamina = 200;
 
 global.move_spd = 0.2;
 global.mine_dmg = 1;
 global.mine_spd = 0.08;
 global.mine_level = 0;
 global.jump_speed = 1.3;
-global.jump_mode = false;
 global.jump_max_speed_for_move = 0.3;
 global.jump_max_distance_for_move = 2;
 global.grav = 0.1;
@@ -48,3 +48,6 @@ global.achievement_unlimited_potions = false; // let me run out of stamina enoug
 global.achievement_shattered = false; // as shiny fall 5 tiles
 global.achievement_boxxy = false; // got the box
 global.achievement_broken = false; // after falling down, complete the game with broken legs
+
+// progress
+global.pre_death_got_shiney = false;
