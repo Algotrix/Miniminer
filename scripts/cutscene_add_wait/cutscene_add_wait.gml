@@ -1,5 +1,7 @@
+///arg cutscene
 ///arg seconds
 
-var _seconds = argument0;
+var _cutscene = argument0;
+var _seconds = argument1;
 
-cutscene_add(cutscene_wait, _seconds);
+cutscene_add(_cutscene, cutscene_wait, _seconds);

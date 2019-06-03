@@ -1,1 +1,1 @@
-return o_textbox.state == "" && o_textbox.a_show == "";
+return o_textbox.state == "" && o_textbox.a_show == false;

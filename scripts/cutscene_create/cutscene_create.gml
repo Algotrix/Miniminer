@@ -1,0 +1,1 @@
+return instance_create_layer(-1, -1, layer_game, o_cutscene);

@@ -2,8 +2,13 @@ if(global.is_in_dialogue) exit;
 
 if(state == "test")
 {
-
-	
+	var _c = cutscene_create();
+	cutscene_add_wait(_c, 5);
+	cutscene_add_textbox(_c, "Hello!");
+	cutscene_add_wait(_c, 5);
+	cutscene_add_textbox(_c, "esdf!");
+	cutscene_start(_c);
+	state = "";
 }
 
 #region start

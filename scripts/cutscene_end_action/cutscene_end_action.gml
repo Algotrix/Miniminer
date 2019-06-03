@@ -1,6 +1,6 @@
-scene++;
+scene_index++;
 
-if(scene >= ds_list_size(scene_info))
+if(scene_index >= ds_list_size(scene_info))
 {
 	killme();	
 };
