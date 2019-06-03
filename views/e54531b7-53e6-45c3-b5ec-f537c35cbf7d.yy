@@ -9,7 +9,8 @@
         "c98dfd75-383c-4771-9396-82f86f757006",
         "eba9471a-0a4d-4501-8f16-b6e3d812bbf4",
         "660f77db-e4a5-481e-a8dc-7d1ccca3e0ac",
-        "f926f04d-c7e7-4599-afed-8a998a5162c7"
+        "f926f04d-c7e7-4599-afed-8a998a5162c7",
+        "794859ff-f517-47e6-accd-a1a2de0493b6"
     ],
     "filterType": "GMScript",
     "folderName": "dialogue",

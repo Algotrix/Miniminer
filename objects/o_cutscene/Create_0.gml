@@ -8,3 +8,4 @@ scene_index = 0;
 
 timer = 0;
 textbox_showing = false;
+current_itembox = noone;

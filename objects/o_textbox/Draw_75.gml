@@ -51,15 +51,7 @@ if(state == "show")
 	#endregion
 
 	#region frame
-	draw_set_color(_a_show_color_dialog);
-	draw_rectangle(_x1, _y1, _x2, _y2, false);
-	draw_set_color(_a_show_color_frame);
-
-	draw_rectangle_width(_x1 + _frame_margin, 
-						 _y1 + _frame_margin, 
-						 _x2 - _frame_margin * 2, 
-						 _y2 - _frame_margin * 2, 
-						 2)
+	draw_textbox_frame(_x1, _y1, _x2, _y2, _a_show_color_dialog, _a_show_color_frame);
 	#endregion
 						
 	#region text
