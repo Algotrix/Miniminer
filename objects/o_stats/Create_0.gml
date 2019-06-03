@@ -1,3 +1,4 @@
+// development
 global.godmode = true;
 global.debug_quickmode = true;
 global.drawdebug = true;
@@ -30,6 +31,9 @@ global.iron_ore = 0;
 
 // hud
 global.hud_show_healthbar = false;
+
+// world
+global.fade_group_faded = "";
 
 
 #region godmode

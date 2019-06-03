@@ -13,6 +13,14 @@ a_show_color_text = ds_list_create();
 a_show_name = ds_list_create();
 a_show_color_name = ds_list_create();
 
+// todo: optional additions
+dialog_option0 = "";
+dialog_option1 = "";
+dialog_returnindex = -1;
+
+// get-states
+is_finished = false;
+
 // states
 state = "";
 counter_init = false;

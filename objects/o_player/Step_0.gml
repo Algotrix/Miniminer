@@ -223,8 +223,17 @@ switch(state)
 	case "event_move_crippled":
 	if(event_move_crippled_x_new == -1)
 	{
-		if(last_action_dir == dir_right) event_move_crippled_x_new = x + 1;
-		if(last_action_dir == dir_left) event_move_crippled_x_new = x - 1;
+		if(last_action_dir == dir_right) 
+		{ 
+			//image_index = 1;
+			event_move_crippled_x_new = x + 1;
+		}
+			
+		if(last_action_dir == dir_left) 
+		{
+			//image_index = 0;
+			event_move_crippled_x_new = x - 1;
+		}
 	}
 	x = approach(x, event_move_crippled_x_new, global.move_spd);
 

@@ -47,9 +47,17 @@
             "objectId": "24ab933b-ca25-4c26-a63c-5e541feda1fd",
             "propertyId": "a8eb324e-4feb-497b-bb4d-3f2958018e4e",
             "value": "False"
+        },
+        {
+            "id": "0824cc00-593f-48b9-8329-144c1baebef7",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "35b2b5d1-2934-4cd5-965d-61a69db90cf3",
+            "propertyId": "ab655ce4-004e-49f5-b3ba-32eae1f19610",
+            "value": "stone"
         }
     ],
-    "parentObjectId": "df64a676-97e0-45f7-9e3b-49c680156e42",
+    "parentObjectId": "35b2b5d1-2934-4cd5-965d-61a69db90cf3",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,

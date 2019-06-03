@@ -2,10 +2,7 @@ if(global.is_in_dialogue) exit;
 
 if(state == "test")
 {
-	textbox_add("hello, here am i!", false, 300, true, c_black, c_white, c_red, "The New One", c_red);	
-	textbox_add("another fancy dialogue - yay!", true, 300, false, c_black, c_blue, c_white, "Der da!");
-	textbox_add("isn't it great, huh?", false, 300, true, c_green, c_black);
-	textbox_show_ext();
+
 	
 }
 
@@ -221,7 +218,7 @@ else if(state == "pre_death_got_shiney3")
 	var _event_move_crippled = instance_exists(eo_move_crippled);
 	pre_death_got_shiney3_jumped_wait -= 1;
 	
-	#region jump messages when not crippled
+	#region check for jump messages when not crippled
 	if(!_event_move_crippled)
 	{
 		if(o_input.key_up && pre_death_got_shiney3_jumped_wait < 0)
@@ -243,8 +240,7 @@ else if(state == "pre_death_got_shiney3")
 	}
 	#endregion
 	
-		
-	#region walk messages when crippled
+	#region check for walk messages when crippled
 	if(_event_move_crippled)
 	{
 		if(o_input.key_left || o_input.key_right && pre_death_got_shiney3_jumped_wait < 0) 
@@ -283,7 +279,7 @@ else if(state == "pre_death_got_shiney3")
 	}
 	#endregion
 	
-	// SHATTER - player falls down as shiney - min 5 blocks
+	#region check for SHATTER - player falls down as shiney - min 5 blocks
 	if(o_player.vsp == 0 && pre_death_got_shiney3_last_vsp < -(global.grav * 25))
 	{
 		state = "pre_death_got_shiney_shatter";
@@ -295,6 +291,7 @@ else if(state == "pre_death_got_shiney3")
 			global.achievement_broken = true;	
 		}
 	}
+	#endregion
 	
 	// stamina runs out
 	if(global.stamina <= 10)

@@ -20,6 +20,7 @@ test = map_range(23, 87, 75, 500, 1000);
 #macro char_shopkeep "char_shopkeep"
 
 global.is_in_dialogue = false;
+global.is_in_cutscene = false;
 global.halted = false;
 global.can_move = true;
 
