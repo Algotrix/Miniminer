@@ -983,6 +983,14 @@
             }
         },
         {
+            "Key": "a17f27a8-55a0-40ed-b0bd-b6a56000a470",
+            "Value": {
+                "id": "e4f7ba2c-2da4-4563-8155-f428af8841e2",
+                "resourcePath": "scripts\\add_achievement\\add_achievement.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a21944bf-95e2-4d33-a84a-00551235964a",
             "Value": {
                 "id": "7ea62fc6-f418-4eed-859e-241edc0f54f3",
@@ -1367,6 +1375,14 @@
             }
         },
         {
+            "Key": "defaa0e4-e93a-49db-98d1-ed7b7e5c757a",
+            "Value": {
+                "id": "b4d2101e-b69e-43ad-bc04-2c46ebd35f3b",
+                "resourcePath": "scripts\\cutscene_fadein\\cutscene_fadein.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "df30403b-c720-46f7-a844-3702d11cbccb",
             "Value": {
                 "id": "b227d64b-7987-4afa-bde4-a2b1b212aa17",
@@ -1404,6 +1420,14 @@
                 "id": "d7e90e21-0b9a-4f49-acf7-e40fd4c10ffb",
                 "resourcePath": "views\\e54531b7-53e6-45c3-b5ec-f537c35cbf7d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e628d834-ac9d-400f-8e5a-7f790579ebd3",
+            "Value": {
+                "id": "281efbd0-e9bf-43d5-903e-7f6c0bd2cf46",
+                "resourcePath": "scripts\\config_achievements\\config_achievements.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1569,7 +1593,7 @@
     ],
     "script_order": [
         "456083c8-5718-49f8-85ef-a6b6830e4f00",
-        "95b78fc6-7f85-411e-8827-b2b9b141182b",
+        "e628d834-ac9d-400f-8e5a-7f790579ebd3",
         "5c11c263-efd1-4d2a-b2c9-829427412141",
         "933c3d41-287d-452e-8fae-f34d328ee773",
         "4d15d76f-0f79-42f1-8e72-168a898c6cb6",
@@ -1595,6 +1619,19 @@
         "660f77db-e4a5-481e-a8dc-7d1ccca3e0ac",
         "f926f04d-c7e7-4599-afed-8a998a5162c7",
         "794859ff-f517-47e6-accd-a1a2de0493b6",
+        "c00ad7c1-a84d-4aad-9523-82160cd98248",
+        "e7103576-5903-45e0-b4da-1c104c2c8595",
+        "cc729736-4a0b-4d2a-80ce-0f177d8c48c0",
+        "f0c8e8d2-3c60-442d-aec2-3c62d1282f76",
+        "bde6f398-ff4a-43c2-a3f8-21acd550937d",
+        "bd847616-b462-4860-97a3-c4fc18826b98",
+        "4a6293c7-c7d1-493e-819b-f06f13b844f5",
+        "dcd382cd-dafe-47e6-86cb-5da003069018",
+        "daa42c21-5b78-4c95-8ce6-c49180fd467c",
+        "d9d2a0e3-c4d3-4994-bdac-aa10e4d5b145",
+        "078e257d-1ef7-48c2-acc2-5b1fe1e3a773",
+        "319aa388-5ec8-4f22-beae-d5160391798d",
+        "defaa0e4-e93a-49db-98d1-ed7b7e5c757a",
         "7ea27a00-fbb9-4031-b522-3c2ffb8cde84",
         "4ae261e7-0046-468e-b58e-9c98ee90ddea",
         "27fbb5f7-87e0-49cf-a194-559c84cd0d87",
@@ -1608,6 +1645,7 @@
         "4b39acec-d009-4069-8cad-821a73585621",
         "044f980d-ac74-4f0e-87c6-f5c70852d49d",
         "9f7220d7-babf-4af6-8427-7ce4d283d0b5",
+        "95b78fc6-7f85-411e-8827-b2b9b141182b",
         "9a04529c-db93-4afe-bc59-a46bae49cbf6",
         "da298b78-14e5-4b72-82e8-88a950b4b3f4",
         "19c80cd6-07b4-405b-82ed-5c19f2a772a3",
@@ -1622,18 +1660,7 @@
         "89355ee4-4c97-4998-8197-3736c64560c1",
         "18af7a5c-78d3-427a-85f2-0b7216f2b300",
         "9f169b3b-2449-4f21-a878-8fe8448bf9de",
-        "c00ad7c1-a84d-4aad-9523-82160cd98248",
-        "e7103576-5903-45e0-b4da-1c104c2c8595",
-        "cc729736-4a0b-4d2a-80ce-0f177d8c48c0",
-        "f0c8e8d2-3c60-442d-aec2-3c62d1282f76",
-        "bde6f398-ff4a-43c2-a3f8-21acd550937d",
-        "bd847616-b462-4860-97a3-c4fc18826b98",
-        "4a6293c7-c7d1-493e-819b-f06f13b844f5",
-        "dcd382cd-dafe-47e6-86cb-5da003069018",
-        "daa42c21-5b78-4c95-8ce6-c49180fd467c",
-        "d9d2a0e3-c4d3-4994-bdac-aa10e4d5b145",
-        "078e257d-1ef7-48c2-acc2-5b1fe1e3a773",
-        "319aa388-5ec8-4f22-beae-d5160391798d",
+        "a17f27a8-55a0-40ed-b0bd-b6a56000a470",
         "98680d8f-93a9-4dc5-936c-31860a0a80fd"
     ],
     "tutorial": ""

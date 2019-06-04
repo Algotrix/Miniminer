@@ -3,10 +3,11 @@ if(global.is_in_dialogue) exit;
 if(state == "test")
 {
 	var _c = cutscene_create();
-	cutscene_add_wait(_c, 5);
-	cutscene_add_itembox(_c, "You've got an achievement!", s_char_shopkeep, "You sneaky bastard!");
-	cutscene_add_wait(_c, 5);
-	cutscene_add_textbox(_c, "esdf!");
+	cutscene_add(_c, cutscene_fadein);
+	//cutscene_add_itembox(_c, "You've got an achievement!", s_char_shopkeep, "You sneaky bastard!");
+	//cutscene_add_wait(_c, 5);
+	cutscene_add_textbox(_c, "esdf!", true);
+	//cutscene_add_textbox(_c, "abcd!", true);
 	cutscene_start(_c);
 	state = "";
 }
@@ -325,25 +326,154 @@ else if(state == "pre_death_got_shiney3")
 else if(state == "pre_death_got_shiney_die")
 {
 	if(!instance_exists(o_dead)) instance_create_layer(-1, -1, layer_game, o_dead);
-	state = "end";
+	o_dead.restart_on_action = false;
+	state = "post_death_start";
 }
 else if(state == "pre_death_got_shiney_shatter")
 {
 	pre_death_got_shiney3_die_wait -= 1;
 	if(pre_death_got_shiney3_die_wait == 0)
 	{
-		if(!instance_exists(o_dead)) var _dead = instance_create_layer(-1, -1, layer_game, o_dead);
-
+		if(!instance_exists(o_dead)) instance_create_layer(-1, -1, layer_game, o_dead);
+		o_dead.restart_on_action = false;
 
 		if(instance_exists(eo_move_crippled))
 		{
-			_dead.sub_text = "But you were a true hero. Press space to respawn";
+			o_dead.sub_text = "But you were a true hero. Press space to respawn";
 		}
 		else
 		{
-			_dead.sub_text = "And destroyed SHINEY. Press space to respawn";
+			o_dead.sub_text = "And destroyed SHINEY. Press space to respawn";
 		}
+		state = "post_death_start";
+	}
+}
+#endregion
+
+#region post_death_shopkeep
+
+if(state == "post_death_start")
+{
+	if(!instance_exists(o_dead))
+	{
+		// todo: set black background + stars;
+		var _c = cutscene_create();
+		cutscene_add(_c, cutscene_fadein);
+		cutscene_add_wait(_c, 3);
+
+		instance_create_layer(apos(2), apos(7), layer_game, o_shopherd);
+		o_player.image_index = 1;
+		o_player.look_dir = dir_left;
+		o_player.x = apos(4);
+		o_player.y = apos(7);
+	
+		global.shinies = 0;
+	
+		state = "post_death_shopherd_dialogue";
+	}
+
+
+}
+if(state == "post_death_shopherd_dialogue")
+{
+	cutscene_post_death_shopherd_dialogue = cutscene_create();
+	var _c = cutscene_post_death_shopherd_dialogue;
+	var _num_achievements = 0;
+	var _c_guy = make_color_rgb(0, 0, 30)
+	var _c_a1 = make_color_rgb(128, 255, 128);
+	var _c_a2 = make_color_rgb(211, 211, 0);
+	
+	global.can_move = false;
+	cutscene_add(_c, cutscene_fadein);
+	
+	cutscene_add_textbox(_c, "Congratulations you died.", 
+		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		
+	cutscene_add_textbox(_c, "Did it hurt?", 
+		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		
+	cutscene_add_textbox(_c, "Yeah, well i guess so. Now let's see", 
+		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		
+	cutscene_add_textbox(_c, "What do we have here? ...", 
+		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		
+	global.achievement_boxxy = true;
+	global.achievement_shattered = true;
+	global.achievement_broken = true;
+	global.achievement_caught_shopkeep = true;
+	global.achievement_unlimited_potions = true;
+		
+	if(global.achievement_boxxy)
+	{
+		cutscene_add_textbox(_c, "It looks like found the Box! That's great.", true, 180, false, _c_guy, c_white, _c_a1, "???", c_white);
+		cutscene_add_textbox(_c, "I'm sure it had something powerful in it", true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		_num_achievements += 1;
+		cutscene_add_wait(_c, 3);
+	}
+	
+	if(global.achievement_unlimited_potions)
+	{
+		cutscene_add_textbox(_c, "Oh i see you've got a bag full of potions.", 	true, 180, false, _c_guy, c_white, _c_a1, "???", c_white);
+		cutscene_add_textbox(_c, "I'm sure you don't need that anymore.", true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+			
+		cutscene_add_textbox(_c, "What what what???", false, 180, false);
+		
+		cutscene_add_textbox(_c, "It's gone already. Thank me later.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+			
+		cutscene_add_textbox(_c, "WTF!", false, 180, false);
+		_num_achievements += 1;
+		cutscene_add_wait(_c, 3);
+	}
+	
+	if(global.achievement_caught_shopkeep)
+	{
+		cutscene_add_textbox(_c, "Awww.. you sneaky one.. ", true, 180, false, _c_guy, c_white, _c_a1, "???", c_white);
+		cutscene_add_textbox(_c, "...tried to lurk under my robe, huh?", true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "Well, uuh.. don't do this again, ok?", true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		_num_achievements += 1;
+		cutscene_add_wait(_c, 3);
+	}
+	
+	if(global.achievement_shattered)
+	{
+		cutscene_add_textbox(_c, "Oh, and you broke the SHINY. What a shame!", true, 180, false, _c_guy, c_white, _c_a1, "???", c_white);
+		cutscene_add_textbox(_c, "But it's a feat actually! Congrats for that!", true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		_num_achievements += 1;
+		cutscene_add_wait(_c, 3);
+		if(global.achievement_broken)
+		{
+			cutscene_add_textbox(_c, "!!!", true, 60, false, _c_guy, c_white, _c_a2, "???", c_white);
+			cutscene_add_textbox(_c, "And you did it all while crippled !!!", true, 180, false, _c_guy, c_white, _c_a2, "???", c_white);
+			cutscene_add_textbox(_c, "... and in searing pain !!!", true, 180, false, _c_guy, c_white, _c_a2, "???", c_white);
+			cutscene_add_textbox(_c, "You must be a true hero. I bow before you.", true, 180, false, _c_guy, c_white, _c_a1, "???", c_white);
+			cutscene_add_textbox(_c, ".. but don't think this will give you any advantages.", true, 180, false, _c_guy, c_white, c_white, "???", c_white);		
+			_num_achievements += 1;
+		}
+	}
+	
+	cutscene_add_wait(_c, 5);
+	cutscene_add_textbox(_c, "You've got " + string(_num_achievements) + " out of 5 achievements.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+
+	if(global.shinies > 0)
+	{
+		cutscene_add_wait(_c, 3);
+		cutscene_add_textbox(_c, "Huh?? Where is my SHINY???", false, 180, false);
+	}
+	
+	cutscene_start(_c);
+
+	state = "post_death_after_dialogue";
+
+}
+if(state == "post_death_after_dialogue")
+{
+	if(!instance_exists(cutscene_post_death_shopherd_dialogue))
+	{
+		global.can_move = true;	
+		cutscene_post_death_shopherd_dialogue = noone;
 		state = "end";
 	}
 }
+
 #endregion

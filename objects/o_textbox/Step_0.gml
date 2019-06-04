@@ -26,6 +26,7 @@ if(state == "show")
 			a_show = false;
 			counter_init = false;
 			ds_list_clear(a_show_text_lines);
+			ds_list_clear(a_show_position);
 			ds_list_clear(a_show_continue_wait);
 			ds_list_clear(a_show_continue_wait_skippable);
 			ds_list_clear(a_show_color_dialog);
@@ -33,6 +34,7 @@ if(state == "show")
 			ds_list_clear(a_show_color_text);
 			ds_list_clear(a_show_name);
 			ds_list_clear(a_show_color_name);
+			
 			show_line = 0;
 			global.is_in_dialogue = false;
 		}

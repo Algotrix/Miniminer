@@ -9,3 +9,5 @@ scene_index = 0;
 timer = 0;
 textbox_showing = false;
 current_itembox = noone;
+current_fadein = noone;
+current_fadeout = noone;
