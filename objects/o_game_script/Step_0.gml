@@ -4,7 +4,7 @@ if(state == "test")
 {
 	var _c = cutscene_create();
 	cutscene_add_wait(_c, 5);
-	cutscene_add_itembox(_c, "Hello!", s_ladder, c_blue, c_red);
+	cutscene_add_itembox(_c, "You've got an achievement!", s_char_shopkeep, "You sneaky bastard!");
 	cutscene_add_wait(_c, 5);
 	cutscene_add_textbox(_c, "esdf!");
 	cutscene_start(_c);
