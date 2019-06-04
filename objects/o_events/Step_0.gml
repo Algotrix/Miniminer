@@ -21,14 +21,6 @@ if(a_event != "" && a_event_delay <= 0)
 }
 #endregion
 
-#region check for global events to selftrigger
-if(global.shinies > 0 && !pre_death_got_shiney_triggered)
-{
-	pre_death_got_shiney_triggered = true;	
-	o_game_script.state = "pre_death_got_shiney";
-}
-
-#endregion
 
 #region pre_death_go_left
 if(state == "pre_death_go_left")
@@ -69,18 +61,29 @@ if(state == "pre_death_mountain_up")
 #endregion
 
 #region event instance spawner
+if(state == "pre_death_got_shiney")
+{
+	if(!pre_death_got_shiney_triggered)
+	{
+		pre_death_got_shiney_triggered = true;	
+		o_game_script.state = "pre_death_got_shiney";
+	}
+	state = "end";
+}
+
 if(state == "pre_death_show_shopkeep")
 {
 	instance_create_layer(apos(1), apos(7), layer_game, eo_pre_death_show_shopkeep);
 	state = "end";
 }
-#endregion
 
 if(state == "event_move_crippled")
 {
 	instance_create_layer(-1, -1, layer_game, eo_move_crippled);
 	state = "end";
 }
+#endregion
+
 #region end
 
 

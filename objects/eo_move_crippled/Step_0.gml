@@ -30,12 +30,16 @@ else if(state == "event_move_crippled_restart_or_continue")
 		if(o_input.key_up)
 		{
 			instance_destroy(o_fadeout);
+			instance_create_layer(80, -1, layer_game, o_spider);
 			instance_create_layer(-1, -2, layer_game, o_fadein);
 			state = "event_move_crippled_show_text";
 		}
 		else if(o_input.key_action)
 		{
-			room_restart();
+			kill(o_hud_you_died);
+			kill(o_fadeout);
+			o_game_script.state = "post_death_start";
+			state = "end";
 		}
 	}
 }
@@ -82,8 +86,7 @@ else if(state == "event_move_crippled_check_damage")
 	{
 		// not normal death
 		global.hp = max(global.hp - _dmg, 1);
-		var _dead = instance_create_layer(-1, -1, layer_game, o_dead);
-		_dead.sub_text = "This time for real";
+		state = "event_move_crippled_die"
 	}
 	else
 	{
@@ -91,6 +94,16 @@ else if(state == "event_move_crippled_check_damage")
 	}
 	
 	event_move_crippled_last_vsp = o_player.vsp;
+}
+if(state == "event_move_crippled_die")
+{
+	if(!instance_exists(o_dead)) 
+	{
+		instance_create_layer(-1, -1, layer_game, o_dead);
+		o_dead.sub_text = "This time for real";
+		o_dead.after_death_game_state = "post_death_start";
+		state = "end";
+	}	
 }
 else if(state == "end")
 {

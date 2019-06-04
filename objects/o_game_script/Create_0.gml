@@ -1,7 +1,7 @@
 /// @description Hier Beschreibung einfügen
 
-state = "post_death_start";
-//state = "start";
+//state = "post_death_start";
+state = "start";
 //state = "test";
 
 pre_death_potions_drank = 0;

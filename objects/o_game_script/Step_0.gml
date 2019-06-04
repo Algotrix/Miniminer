@@ -354,25 +354,30 @@ else if(state == "pre_death_got_shiney_shatter")
 
 if(state == "post_death_start")
 {
+	global.can_move = false;
 	if(!instance_exists(o_dead))
 	{
-		// todo: set black background + stars;
-		var _c = cutscene_create();
-		cutscene_add(_c, cutscene_fadein);
-		cutscene_add_wait(_c, 3);
-
-		instance_create_layer(apos(2), apos(7), layer_game, o_shopherd);
-		o_player.image_index = 1;
-		o_player.look_dir = dir_left;
-		o_player.x = apos(4);
-		o_player.y = apos(7);
-	
-		global.shinies = 0;
-	
-		state = "post_death_shopherd_dialogue";
+		set_background_color(make_color_rgb(22, 22, 22));
+		
+		if(!instance_exists(o_shopherd)) 
+		{
+			instance_create_layer(apos(2), apos(7), layer_game, o_fadein);
+			instance_create_layer(apos(2), apos(7), layer_game, o_shopherd);
+			o_player.sprite_index = s_player_idle;
+			o_player.image_index = 1;
+			o_player.look_dir = dir_left;
+			o_events.pre_death_got_shiney_triggered = true;
+			set_pos(4, 7);
+		
+			kill(eo_pre_death_show_shopkeep);
+		
+			global.shinies = 0;
+		}
+		if(o_fadein.fadein_done)
+		{
+			state = "post_death_shopherd_dialogue";
+		}
 	}
-
-
 }
 if(state == "post_death_shopherd_dialogue")
 {
@@ -383,30 +388,28 @@ if(state == "post_death_shopherd_dialogue")
 	var _c_a1 = make_color_rgb(128, 255, 128);
 	var _c_a2 = make_color_rgb(211, 211, 0);
 	
-	global.can_move = false;
-	cutscene_add(_c, cutscene_fadein);
-	
+	cutscene_add_wait(_c, 2);
 	cutscene_add_textbox(_c, "Congratulations you died.", 
 		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
 		
 	cutscene_add_textbox(_c, "Did it hurt?", 
-		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		true, 60, false, _c_guy, c_white, c_white, "???", c_white);
 		
 	cutscene_add_textbox(_c, "Yeah, well i guess so. Now let's see", 
-		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		true, 120, false, _c_guy, c_white, c_white, "???", c_white);
 		
 	cutscene_add_textbox(_c, "What do we have here? ...", 
-		true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		true, 120, false, _c_guy, c_white, c_white, "???", c_white);
 		
-	global.achievement_boxxy = true;
-	global.achievement_shattered = true;
-	global.achievement_broken = true;
-	global.achievement_caught_shopkeep = true;
-	global.achievement_unlimited_potions = true;
+	//global.achievement_boxxy = true;
+	//global.achievement_shattered = true;
+	//global.achievement_broken = true;
+	//global.achievement_caught_shopkeep = true;
+	//global.achievement_unlimited_potions = true;
 		
 	if(global.achievement_boxxy)
 	{
-		cutscene_add_textbox(_c, "It looks like found the Box! That's great.", true, 180, false, _c_guy, c_white, _c_a1, "???", c_white);
+		cutscene_add_textbox(_c, "It looks like you found the Box! That's great.", true, 180, false, _c_guy, c_white, _c_a1, "???", c_white);
 		cutscene_add_textbox(_c, "I'm sure it had something powerful in it", true, 180, false, _c_guy, c_white, c_white, "???", c_white);
 		_num_achievements += 1;
 		cutscene_add_wait(_c, 3);
@@ -452,8 +455,61 @@ if(state == "post_death_shopherd_dialogue")
 		}
 	}
 	
-	cutscene_add_wait(_c, 5);
-	cutscene_add_textbox(_c, "You've got " + string(_num_achievements) + " out of 5 achievements.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+	cutscene_add_wait(_c, 2);
+	if(_num_achievements == 0) 
+	{
+		cutscene_add_textbox(_c, "You've got none of the 5 achievements....",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "..you are a true disappointment.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+	}
+	else if(_num_achievements == 1) 
+	{
+		cutscene_add_textbox(_c, "You've got " + string(_num_achievements) + " out of 5 achievements...",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "Better than nothing I guess...",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "but you should still be ashamed of yourself",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+	}
+	else if(_num_achievements == 2) 
+	{
+		cutscene_add_textbox(_c, "You've got " + string(_num_achievements) + " out of 5 achievements.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "Hey, at least you tried, i guess...",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+	}
+	else if(_num_achievements == 3) 
+	{
+		cutscene_add_textbox(_c, "You've got " + string(_num_achievements) + " out of 5 achievements.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "Wow, not bad.. but maybe you should try harder..",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+
+	}
+		else if(_num_achievements == 4) 
+	{
+		cutscene_add_textbox(_c, "You've got " + string(_num_achievements) + " out of 5 achievements.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "Hey, how did you do that? ",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "I was absolutely sure, you were too stupid for this game.",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+	}
+	else if(_num_achievements == 5) 
+	{
+		cutscene_add_textbox(_c, "You've got all the achievements.", true, 180, false, _c_guy, c_white, _c_a2, "???", c_white);
+		cutscene_add_textbox(_c, "What a braniac you are! Congrats! ",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "Now take that cake",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_itembox(_c, "You've got cake", s_cake, "as cakey as it can get");
+	}
+	
+	if(_num_achievements == 5)
+	{
+		cutscene_add_textbox(_c, "Now move on. There's nothing more to see here. ",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+	}
+	else
+	{
+		cutscene_add_textbox(_c, "Now move on. We're done here... ", true, 120, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "But why don't you try to get all the achievements? ",	true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+		cutscene_add_textbox(_c, "It could be worth it", true, 180, false, _c_guy, c_white, c_white, "???", c_white);
+	}
+
+	cutscene_add_textbox(_c, "Bye", true, 120, false, _c_guy, c_white, c_white, "???", c_white);
+	cutscene_add_wait(_c, 2);
+	cutscene_add_textbox(_c, "Oh, by the way...", true, 60, false, _c_guy, c_white, c_white, "???", c_white);
+	cutscene_add_textbox(_c, "I'm The Shopherd", true, 180, false, _c_guy, c_white, c_white, "Shopherd", c_white);
+	cutscene_add_textbox(_c, "You should visit me in my Upgrade-Shop to the left", true, 180, false, _c_guy, c_white, c_white, "Shopherd", c_white);
+	cutscene_add_textbox(_c, "You look quite slow and underpowered.", true, 180, false, _c_guy, c_white, c_white, "Shopherd", c_white);
+	cutscene_add_textbox(_c, "Cya", true, 180, false, _c_guy, c_white, c_white, "Shopherd", c_white);
 
 	if(global.shinies > 0)
 	{
@@ -470,8 +526,21 @@ if(state == "post_death_after_dialogue")
 {
 	if(!instance_exists(cutscene_post_death_shopherd_dialogue))
 	{
-		global.can_move = true;	
 		cutscene_post_death_shopherd_dialogue = noone;
+		if(instance_exists(eo_move_crippled)) instance_destroy(eo_move_crippled);
+		o_player.event_move_crippled = false;
+		state = "post_death_after_move_shopherd";
+	}
+}
+if(state == "post_death_after_move_shopherd")
+{
+	o_shopherd.image_xscale = -1;
+	o_shopherd.x = approach(o_shopherd.x, apos(-1), 0.1);
+	
+	if(near(o_shopherd.x, apos(-1), 0.1))
+	{
+		textbox_show("Hmm.. what a strange guy");
+		global.can_move = true;	
 		state = "end";
 	}
 }

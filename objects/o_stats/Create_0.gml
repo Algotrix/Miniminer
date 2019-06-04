@@ -1,11 +1,12 @@
 // development
-global.godmode = true;
+global.godmode = false;
 global.debug_quickmode = true;
-global.drawdebug = true;
+global.drawdebug = false;
 
 // main Stats
 global.max_hp = 100;
-global.max_stamina = 200;
+global.max_stamina = 100;
+global.stamina_regen = 1;
 
 global.move_spd = 0.2;
 global.mine_dmg = 1;

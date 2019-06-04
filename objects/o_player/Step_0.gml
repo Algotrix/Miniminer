@@ -1,6 +1,10 @@
 if(global.is_in_dialogue || global.halted) exit;
 
 move_dir = dir_none;
+
+// apply regen
+global.stamina =min(global.stamina + global.stamina_regen / room_speed, global.max_stamina);
+
 switch(state)
 {
 	case "idle" :
@@ -220,6 +224,7 @@ switch(state)
 	}
 	#endregion
 	
+	#region event_move_crippled
 	case "event_move_crippled":
 	if(event_move_crippled_x_new == -1)
 	{
@@ -252,7 +257,10 @@ switch(state)
 		state_check_fall();
 	}
 	break;
+	#endregion
 }
+
+
 
 global.debug0 = global.achievement_caught_shopkeep; // when he comes down, approach him from below
 global.debug1 = global.achievement_unlimited_potions; // let me run out of stamina enough times

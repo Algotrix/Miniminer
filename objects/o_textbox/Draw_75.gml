@@ -16,7 +16,8 @@ if(state == "show")
 	var _frame_margin = 1;
 	var _text_margin = 6;
 	
-	var _col_old = draw_get_color();
+	draw_save();
+	
 	#endregion
 
 	#region position calculations
@@ -81,11 +82,11 @@ if(state == "show")
 	if(continue_delay_counter <= 0)
 	{
 		draw_text(_x2 - string_width(continue_string) - _text_margin, 
-				  _y2 - string_height(continue_string) - _text_margin, 
+				  _y2 - string_height(continue_string) - _text_margin + 4, 
 				  continue_string);
 	}
 	#endregion
 	
 	
-	draw_set_color(_col_old);
+	draw_load();
 }

@@ -13,5 +13,6 @@ restart_on_action = true;
 destroy_wait_frames = 10;
 destroy_countdown_running = false;
 
+after_death_game_state = noone;
 
 
